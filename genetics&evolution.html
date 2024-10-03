@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Reproduction Quiz</title>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .question h2 {
+            font-size: 1.8em;
+            color: #2e8b57;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .options li {
+            background-color: #f0f8ff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.2em;
+            border: 2px solid transparent;
+        }
+
+        .options li:hover {
+            background-color: #e6f7ff;
+            transform: scale(1.02);
+            border: 2px solid #2e8b57;
+        }
+
+        .correct {
+            background-color: #4caf50 !important;
+            color: white;
+        }
+
+        .incorrect {
+            background-color: #f44336 !important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Genetics & Evolution Q&A</h1>
+    <div class="quiz-container">
+
+        <!-- Existing Questions -->
+        <!-- Question 1 to 24 (Same as before) -->
+
+        <!-- New Questions -->
+
+        <!-- Question 25 -->
+        <div class="question">
+            <h2>The tendency of population to remain in genetic equilibrium may be disturbed by</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Random mating</li>
+                <li onclick="checkAnswer(this, false)">Lack of migration</li>
+                <li onclick="checkAnswer(this, false)">Lack of mutation</li>
+                <li onclick="checkAnswer(this, true)">Lack of random mating</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 26 -->
+        <div class="question">
+            <h2>According to Darwin, the organic evolution is due to</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Intraspecific competition</li>
+                <li onclick="checkAnswer(this, false)">Interspecific competition</li>
+                <li onclick="checkAnswer(this, false)">Competition within closely related species</li>
+                <li onclick="checkAnswer(this, false)">Reduced feeding efficiency in one species due to the presence of interfering species</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 27 -->
+        <div class="question">
+            <h2>The process by which organisms with different evolutionary history evolved similar phenotypic adaptation in response to a common environmental challenge is called</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Natural selection</li>
+                <li onclick="checkAnswer(this, true)">Convergent evolution</li>
+                <li onclick="checkAnswer(this, false)">Nonrandom evolution</li>
+                <li onclick="checkAnswer(this, false)">Adaptive radiation</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 28 -->
+        <div class="question">
+            <h2>Evolution of different species in a given area starting from a point and spreading to other geographical areas is known as</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Adaptive radiation</li>
+                <li onclick="checkAnswer(this, false)">Natural selection</li>
+                <li onclick="checkAnswer(this, false)">Migration</li>
+                <li onclick="checkAnswer(this, false)">Divergent evolution</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 29 -->
+        <div class="question">
+            <h2>Which one of the following scientists name is correctly matched with the theory put forth by him?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Weismann – Theory of continuity of germplasm</li>
+                <li onclick="checkAnswer(this, false)">Pasteur – Inheritance of acquired characters</li>
+                <li onclick="checkAnswer(this, false)">Devries – Natural selection</li>
+                <li onclick="checkAnswer(this, false)">Mendel – Theory of pangenesis</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 30 -->
+        <div class="question">
+            <h2>Darwin’s finches are an excellent example of</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Adaptive radiation</li>
+                <li onclick="checkAnswer(this, false)">Seasonal migration</li>
+                <li onclick="checkAnswer(this, false)">Broad parasitism</li>
+                <li onclick="checkAnswer(this, false)">Connecting link</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 31 -->
+        <div class="question">
+            <h2>When two species of different genealogy come to resemble each other as a result of adaptation the phenomenon is termed</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Divergent evolution</li>
+                <li onclick="checkAnswer(this, false)">Co-evolution</li>
+                <li onclick="checkAnswer(this, false)">Micro-evolution</li>
+                <li onclick="checkAnswer(this, true)">Convergent evolution</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 32 -->
+        <div class="question">
+            <h2>Evolutionary history of an organism is known as</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Ancestry</li>
+                <li onclick="checkAnswer(this, false)">Paleontology</li>
+                <li onclick="checkAnswer(this, false)">Ontogeny</li>
+                <li onclick="checkAnswer(this, true)">Phylogeny</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 33 -->
+        <div class="question">
+            <h2>What kind of evidence suggested that man is more closely related with chimpanzee than with other hominoid apes?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Evidence from DNA from sex chromosomes only</li>
+                <li onclick="checkAnswer(this, false)">Comparison of chromosomes morphology only</li>
+                <li onclick="checkAnswer(this, false)">Evidence from fossil remains and the fossil mitochondrial alone</li>
+                <li onclick="checkAnswer(this, true)">Evidence from DNA extracted from sex chromosomes, autosomes and mitochondria</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 34 -->
+        <div class="question">
+            <h2>Darwin in his ‘Natural selection Theory’ did not believe in any role of which one of the following in organic evolution?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Discontinuous variations</li>
+                <li onclick="checkAnswer(this, false)">Parasites and predators as natural enemies</li>
+                <li onclick="checkAnswer(this, false)">Survival of the fittest</li>
+                <li onclick="checkAnswer(this, false)">Struggle for existence</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 35 -->
+        <div class="question">
+            <h2>In which era reptiles were dominant?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Coenozoic era</li>
+                <li onclick="checkAnswer(this, true)">Mesozoic era</li>
+                <li onclick="checkAnswer(this, false)">Paleozoic era</li>
+                <li onclick="checkAnswer(this, false)">Archeozoic era</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 36 -->
+        <div class="question">
+            <h2>Homo sapiens evolved during</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Pleistocene</li>
+                <li onclick="checkAnswer(this, false)">Pliocene</li>
+                <li onclick="checkAnswer(this, false)">Oligocene</li>
+                <li onclick="checkAnswer(this, false)">Miocene</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 37 -->
+        <div class="question">
+            <h2>Which of the following are homologous organs?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Wings of insects and bat</li>
+                <li onclick="checkAnswer(this, false)">Gills of fish and lungs of rabbit</li>
+                <li onclick="checkAnswer(this, true)">Pectoral fins of fish and fore limbs of horse</li>
+                <li onclick="checkAnswer(this, false)">Wings of grasshopper and crow</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 38 -->
+        <div class="question">
+            <h2>Life originated on earth about</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">2.5 billion years ago</li>
+                <li onclick="checkAnswer(this, true)">3.5 billion years ago</li>
+                <li onclick="checkAnswer(this, false)">4.5 billion years ago</li>
+                <li onclick="checkAnswer(this, false)">5.5 billion years ago</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 39 -->
+        <div class="question">
+            <h2>Which is not a case of chromosomal aberration?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Recombination</li>
+                <li onclick="checkAnswer(this, false)">Inversion</li>
+                <li onclick="checkAnswer(this, false)">Duplication</li>
+                <li onclick="checkAnswer(this, false)">Translocation</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 40 -->
+        <div class="question">
+            <h2>Random genetic drift in a population probably results from</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Large population size</li>
+                <li onclick="checkAnswer(this, false)">Highly genetically variable</li>
+                <li onclick="checkAnswer(this, false)">Interbreeding within this population</li>
+                <li onclick="checkAnswer(this, true)">Constant low mutation rate</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    </div>
+    <div></div>
+    <button class="back-btn" onclick="goBack()">Back</button>
+</div>
+
+<script>
+    function checkAnswer(option, isCorrect) {
+// Disable all options after a selection
+const allOptions = option.parentElement.querySelectorAll('li');
+allOptions.forEach(opt => {
+    opt.style.pointerEvents = 'none'; // Disable further clicking
+});
+
+// Check if the answer is correct or incorrect
+if (isCorrect) {
+    option.classList.add('correct');  // Add correct class
+} else {
+    option.classList.add('incorrect'); // Add incorrect class
+}
+}
+function refreshQuestion(button) {
+        // Get all list items within the same question
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+            option.classList.remove('correct', 'incorrect');
+            option.style.pointerEvents = 'auto';  // Re-enable clicking
+        });
+}
+function goBack() {
+    window.history.back();
+}
+
+</script>
+
+    </script>
+</body>
+
+</html>

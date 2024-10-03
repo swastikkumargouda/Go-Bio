@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genetics Quiz</title>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Question title styling */
+        .question h2 {
+            font-size: 1.8em;
+            color: #2e8b57;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for the options list */
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .options li {
+            background-color: #f0f8ff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.2em;
+            border: 2px solid transparent;
+        }
+
+        /* Hover effect for options */
+        .options li:hover {
+            background-color: #e6f7ff;
+            transform: scale(1.02);
+            border: 2px solid #2e8b57;
+        }
+
+        /* Correct and incorrect answer styles */
+        .correct {
+            background-color: #4caf50 !important;
+            color: white;
+        }
+
+        .incorrect {
+            background-color: #f44336 !important;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Mendelism & Non Mendelian Genetics Q&A</h1>
+    <div class="quiz-container">
+        <!-- Question 1: Mendelism -->
+        <div class="question">
+            <h2>Mendel's Law of Independent Assortment applies to genes located</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">on different chromosomes</li>
+                <li onclick="checkAnswer(this, false)">on the same chromosome</li>
+                <li onclick="checkAnswer(this, false)">in mitochondrial DNA</li>
+                <li onclick="checkAnswer(this, false)">in chloroplast DNA</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 2: Incomplete Dominance -->
+        <div class="question">
+            <h2>Incomplete dominance is observed when</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">the dominant allele completely masks the recessive allele</li>
+                <li onclick="checkAnswer(this, false)">both alleles express equally</li>
+                <li onclick="checkAnswer(this, true)">the heterozygous phenotype is intermediate between the two homozygous phenotypes</li>
+                <li onclick="checkAnswer(this, false)">none of the above</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 3: Co-dominance -->
+        <div class="question">
+            <h2>Co-dominance is a genetic situation where</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">both alleles are fully expressed in the heterozygous state</li>
+                <li onclick="checkAnswer(this, false)">one allele is partially expressed</li>
+                <li onclick="checkAnswer(this, false)">only the recessive allele is expressed</li>
+                <li onclick="checkAnswer(this, false)">the dominant allele masks the recessive allele</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 4: Polygenes -->
+        <div class="question">
+            <h2>Which of the following traits in humans is controlled by polygenes?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Blood type</li>
+                <li onclick="checkAnswer(this, true)">Height</li>
+                <li onclick="checkAnswer(this, false)">Widow's peak</li>
+                <li onclick="checkAnswer(this, false)">Sickle-cell anemia</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 5: Pleiotropy -->
+        <div class="question">
+            <h2>Pleiotropy refers to a situation where</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">one gene influences multiple traits</li>
+                <li onclick="checkAnswer(this, false)">multiple genes control a single trait</li>
+                <li onclick="checkAnswer(this, false)">genes from different chromosomes control a single phenotype</li>
+                <li onclick="checkAnswer(this, false)">alleles are equally expressed in heterozygotes</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 6: Linkage -->
+        <div class="question">
+            <h2>When two genes are located on the same chromosome and tend to be inherited together, the phenomenon is called</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Linkage</li>
+                <li onclick="checkAnswer(this, false)">Independent assortment</li>
+                <li onclick="checkAnswer(this, false)">Crossing over</li>
+                <li onclick="checkAnswer(this, false)">Recombination</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 7: Recombination -->
+        <div class="question">
+            <h2>Recombination occurs during which stage of meiosis?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Metaphase I</li>
+                <li onclick="checkAnswer(this, true)">Prophase I</li>
+                <li onclick="checkAnswer(this, false)">Anaphase II</li>
+                <li onclick="checkAnswer(this, false)">Telophase I</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 8: Mendel's Law of Segregation -->
+        <div class="question">
+            <h2>According to Mendel's Law of Segregation, alleles</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">separate during the formation of gametes</li>
+                <li onclick="checkAnswer(this, false)">are always inherited together</li>
+                <li onclick="checkAnswer(this, false)">stay together in the offspring</li>
+                <li onclick="checkAnswer(this, false)">combine to form a new allele</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 9: Mendelian Ratio -->
+        <div class="question">
+            <h2>The phenotypic ratio of a dihybrid cross in F2 generation under Mendelian genetics is</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">3:1</li>
+                <li onclick="checkAnswer(this, false)">1:2:1</li>
+                <li onclick="checkAnswer(this, true)">9:3:3:1</li>
+                <li onclick="checkAnswer(this, false)">1:1</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 10: Multiple Alleles -->
+        <div class="question">
+            <h2>Which of the following traits is controlled by multiple alleles?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Hemophilia</li>
+                <li onclick="checkAnswer(this, false)">Height</li>
+                <li onclick="checkAnswer(this, true)">ABO blood group</li>
+                <li onclick="checkAnswer(this, false)">Skin color</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 16 -->
+<div class="question">
+    <h2>Polygenic inheritance refers to:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">The inheritance of traits controlled by a single gene.</li>
+        <li onclick="checkAnswer(this, true)">The inheritance of traits controlled by multiple genes.</li>
+        <li onclick="checkAnswer(this, false)">The influence of environmental factors on gene expression.</li>
+        <li onclick="checkAnswer(this, false)">The occurrence of lethal alleles.</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 17 -->
+<div class="question">
+    <h2>In co-dominance, the offspring exhibit:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Both parental traits equally.</li>
+        <li onclick="checkAnswer(this, false)">A blending of traits.</li>
+        
+        <li onclick="checkAnswer(this, false)">The dominant trait only.</li>
+        <li onclick="checkAnswer(this, false)">The recessive trait only.</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 18 -->
+<div class="question">
+    <h2>Mendel's law of segregation states that:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Alleles for a trait are distributed to gametes independently.</li>
+       
+        <li onclick="checkAnswer(this, false)">Dominant traits will always mask recessive traits.</li>
+        <li onclick="checkAnswer(this, true)">Two alleles for a trait separate during gamete formation.</li>
+        <li onclick="checkAnswer(this, false)">The environment can influence genetic traits.</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 19 -->
+<div class="question">
+    <h2>The recombinant frequency in genetics is used to:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Measure the degree of similarity between genes.</li>
+        <li onclick="checkAnswer(this, true)">Determine the distance between genes on a chromosome.</li>
+        <li onclick="checkAnswer(this, false)">Identify mutations in a genome.</li>
+        <li onclick="checkAnswer(this, false)">Calculate the percentage of homozygous individuals in a population.</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 20 -->
+<div class="question">
+    <h2>Linkage disequilibrium refers to:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">The non-random association of alleles at different loci.</li>
+        <li onclick="checkAnswer(this, false)">The random assortment of genes during gamete formation.</li>
+        
+        <li onclick="checkAnswer(this, false)">The independence of gene expression from environmental factors.</li>
+        <li onclick="checkAnswer(this, false)">The separation of linked genes during meiosis.</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 21 -->
+<div class="question">
+    <h2>Pleiotropy occurs when:</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Multiple genes affect a single trait.</li>
+        <li onclick="checkAnswer(this, false)">Genes are expressed differently in different environments.</li>
+        <li onclick="checkAnswer(this, false)">A trait is controlled by epistasis.</li>
+        <li onclick="checkAnswer(this, true)">One gene affects multiple traits.</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 22 -->
+<div class="question">
+    <h2>Epigenetics involves:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Changes in the DNA sequence itself.</li>
+        <li onclick="checkAnswer(this, false)">The study of mutations only.</li>
+        <li onclick="checkAnswer(this, true)">Heritable changes in gene expression without altering the DNA sequence.</li>
+        <li onclick="checkAnswer(this, false)">Changes that occur only during meiosis.</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 23 -->
+<div class="question">
+    <h2>A monohybrid cross involves:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Individuals differing in two traits.</li>
+        <li onclick="checkAnswer(this, true)">Individuals differing in one trait.</li>
+        <li onclick="checkAnswer(this, false)">Individuals of different species.</li>
+        <li onclick="checkAnswer(this, false)">Crossing homozygous individuals only.</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 24 -->
+<div class="question">
+    <h2>A test cross is used to:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Determine the genotype of an organism with a dominant phenotype.</li>
+        <li onclick="checkAnswer(this, false)">Identify new mutations.</li>
+        <li onclick="checkAnswer(this, false)">Study linked genes.</li>
+        <li onclick="checkAnswer(this, false)">Predict the offspring of two known genotypes.</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 25 -->
+<div class="question">
+    <h2>Autosomal recessive disorders require:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">One copy of the allele for expression.</li>
+        <li onclick="checkAnswer(this, true)">Two copies of the allele for expression.</li>
+        <li onclick="checkAnswer(this, false)">Environmental factors for expression.</li>
+        <li onclick="checkAnswer(this, false)">Only maternal inheritance.</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 16 -->
+<div class="question">
+    <h2>Identify the indirect statement with reference to the gene ‘I’ that controls ABO blood groups:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">A person will have only two of the three alleles</li>
+        <li onclick="checkAnswer(this, false)">When IA and IB are present together, they express the same type of sugar</li>
+        <li onclick="checkAnswer(this, true)">Allele ‘I’ does not produce any sugar</li>
+        <li onclick="checkAnswer(this, false)">The gene (I) has three alleles</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 17 -->
+<div class="question">
+    <h2>The number of contrasting characters studied by Mendel for his experiments was:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">14</li>
+        <li onclick="checkAnswer(this, false)">4</li>
+        <li onclick="checkAnswer(this, false)">2</li>
+        <li onclick="checkAnswer(this, true)">7</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 18 -->
+<div class="question">
+    <h2>The best example for pleiotropy is:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Skin colour</li>
+        <li onclick="checkAnswer(this, true)">Phenylketonuria</li>
+        <li onclick="checkAnswer(this, false)">Colour blindness</li>
+        <li onclick="checkAnswer(this, false)">ABO blood group</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 19 -->
+<div class="question">
+    <h2>Match the following columns and choose the correct option from the codes given below:</h2>
+    <ul class="options">
+        <li>A. Pleiotropic gene → 1. Both alleles express equally</li>
+        <li>B. Codominance → 2. Change in nucleotides</li>
+        <li>C. Epistasis → 3. One gene shows multiple phenotypic expressions</li>
+        <li>D. Mutation → 4. Non-allelic gene inheritance</li>
+    </ul>
+    <p>Codes:</p>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">A. 1 B. 2 C. 3 D. 4</li>
+        <li onclick="checkAnswer(this, false)">A. 2 B. 3 C. 4 D. 1</li>
+        <li onclick="checkAnswer(this, true)">A. 3 B. 1 C. 4 D. 2</li>
+        <li onclick="checkAnswer(this, false)">A. 1 B. 3 C. 4 D. 2</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 20 -->
+<div class="question">
+    <h2>The production of gametes by the parents, the formation of zygotes, and the F1 and F2 plants can be understood using:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Pie diagram</li>
+        <li onclick="checkAnswer(this, false)">Pyramid diagram</li>
+        <li onclick="checkAnswer(this, true)">Punnett square</li>
+        <li onclick="checkAnswer(this, false)">Venn diagram</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 21 -->
+<div class="question">
+    <h2>In Antirrhinum (snapdragon), a red flower was crossed with a white flower and in F1-generation, pink flowers were obtained. When pink flowers were selfed, the F2-generation showed white, red, and pink flowers. Choose the incorrect statement:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Pink colour in F1 is due to incomplete dominance</li>
+        <li onclick="checkAnswer(this, false)">Ratio of F2 is 1/4 (Red): 2/4 (Pink): 1/4 (White)</li>
+        <li onclick="checkAnswer(this, true)">Law of segregation does not apply in this experiment</li>
+        <li onclick="checkAnswer(this, false)">This experiment does not follow the principle of dominance</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 22 -->
+<div class="question">
+    <h2>Which one of the following pairs is incorrectly matched?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">XO type sex-determination - Grasshopper</li>
+        <li onclick="checkAnswer(this, false)">ABO blood grouping - Codominance</li>
+        <li onclick="checkAnswer(this, true)">Starch synthesis in pea - Multiple alleles</li>
+        <li onclick="checkAnswer(this, false)">TH Morgan - Linkage</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 23 -->
+<div class="question">
+    <h2>Select the correct statement:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Spliceosomes take part in translation</li>
+        <li onclick="checkAnswer(this, true)">Punnett square was developed by a British scientist</li>
+        <li onclick="checkAnswer(this, false)">Franklin Stahl coined the term ‘linkage’</li>
+        <li onclick="checkAnswer(this, false)">Transduction was discovered by S Akman</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 24 -->
+<div class="question">
+    <h2>Which of the following characteristics represent ‘inheritance of blood groups’ in humans?</h2>
+    <ul class="options">
+        <li>1. Dominance</li>
+        <li>2. Codominance</li>
+        <li>3. Multiple alleles</li>
+        <li>4. Incomplete dominance</li>
+        <li>5. Polygenic inheritance</li>
+    </ul>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">2, 1 and 5</li>
+        <li onclick="checkAnswer(this, true)">1, 2 and 3</li>
+        <li onclick="checkAnswer(this, false)">2, 3 and 5</li>
+        <li onclick="checkAnswer(this, false)">1, 3 and 5</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 25 -->
+<div class="question">
+    <h2>AB blood group shows:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Codominance</li>
+        <li onclick="checkAnswer(this, false)">Incomplete dominance</li>
+        <li onclick="checkAnswer(this, false)">Polygenic inheritance</li>
+        <li onclick="checkAnswer(this, false)">Pleiotropy</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+
+    </div>
+
+    <div>
+        <button class="back-btn" onclick="goBack()">Back</button>
+    </div>
+
+    <script>
+        function checkAnswer(option, isCorrect) {
+            const allOptions = option.parentElement.querySelectorAll('li');
+            allOptions.forEach(opt => {
+                opt.style.pointerEvents = 'none'; 
+            });
+
+            if (isCorrect) {
+                option.classList.add('correct');
+            } else {
+                option.classList.add('incorrect');
+            }
+        }
+
+        function refreshQuestion(button) {
+            const options = button.previousElementSibling.querySelectorAll('li');
+            options.forEach(option => {
+                option.classList.remove('correct', 'incorrect');
+                option.style.pointerEvents = 'auto';
+            });
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+    </script>
+</body>
+</html>

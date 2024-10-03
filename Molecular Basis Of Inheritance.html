@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .quiz-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.question h2 {
+    font-size: 1.8em;
+    color: #2e8b57;
+    margin-bottom: 20px;
+}
+
+.options {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.options li {
+    background-color: #f0f8ff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.2em;
+    border: 2px solid transparent;
+}
+
+.options li:hover {
+    background-color: #e6f7ff;
+    transform: scale(1.02);
+    border: 2px solid #2e8b57;
+}
+
+.correct {
+    background-color: #4caf50 !important;
+    color: white;
+}
+
+.incorrect {
+    background-color: #f44336 !important;
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Human Reproduction & Molecular Biology Q&A</h1>
+    <div class="quiz-container">
+
+        <!-- Question 1 -->
+        <div class="question">
+            <h2>The mammalian corpus luteum produces</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Estrogen</li>
+                <li onclick="checkAnswer(this, true)">Progesterone</li>
+                <li onclick="checkAnswer(this, false)">Luteotropic hormone</li>
+                <li onclick="checkAnswer(this, false)">Luteinizing hormone</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <h2>The function of the secretion of Prostate gland is to</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">stimulate sperm activity</li>
+                <li onclick="checkAnswer(this, false)">attract sperms</li>
+                <li onclick="checkAnswer(this, false)">inhibit sperm activity</li>
+                <li onclick="checkAnswer(this, false)">nourish sperms</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <h2>The major part of the semen is the secretion of</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">cowper’s gland</li>
+                <li onclick="checkAnswer(this, true)">prostate gland</li>
+                <li onclick="checkAnswer(this, false)">perineal gland</li>
+                <li onclick="checkAnswer(this, false)">seminiferous tubules</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <h2>In most mammals the testes are located in scrotal sac for</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">sex differentiation</li>
+                <li onclick="checkAnswer(this, true)">spermatogenesis</li>
+                <li onclick="checkAnswer(this, false)">more space to visceral organ</li>
+                <li onclick="checkAnswer(this, false)">independent functioning of kidney</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <h2>Corpus luteum is developed from</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Leftover oocyte</li>
+                <li onclick="checkAnswer(this, false)">nephrostome</li>
+                <li onclick="checkAnswer(this, true)">Leftover graffian follicle after release of ovum</li>
+                <li onclick="checkAnswer(this, false)">none of these</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <h2>The sperm become motile in human being in</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">seminiferous tubules</li>
+                <li onclick="checkAnswer(this, false)">vas deferens</li>
+                <li onclick="checkAnswer(this, true)">epididymis</li>
+                <li onclick="checkAnswer(this, false)">seminal vesicles</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <h2>Which of the following has haploid chromosome?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">oogonia</li>
+                <li onclick="checkAnswer(this, false)">primary oocyte</li>
+                <li onclick="checkAnswer(this, true)">secondary oocyte</li>
+                <li onclick="checkAnswer(this, false)">primary spermatocyte</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <h2>Egg released by Graffian follicle is surrounded by</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Zona pelucida</li>
+                <li onclick="checkAnswer(this, false)">Vitelline membrane</li>
+                <li onclick="checkAnswer(this, false)">Plasma membrane</li>
+                <li onclick="checkAnswer(this, false)">all of the above</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <h2>A human female reaches menopause around the age of</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">70 years</li>
+                <li onclick="checkAnswer(this, false)">25 years</li>
+                <li onclick="checkAnswer(this, false)">15 years</li>
+                <li onclick="checkAnswer(this, true)">50 years</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <h2>The differentiation of sex takes place</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">at the time of gamete fusion</li>
+                <li onclick="checkAnswer(this, false)">before fertilization</li>
+                <li onclick="checkAnswer(this, false)">at the time of gamete formation</li>
+                <li onclick="checkAnswer(this, true)">none of the above</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="question">
+            <h2>During the ovulatory phase, the structure called corpus luteum is formed from</h2>
+            <ul class="options">
+                
+                <li onclick="checkAnswer(this, false)">epididymis</li>
+                <li onclick="checkAnswer(this, false)">isogamates</li>
+                <li onclick="checkAnswer(this, true)">ruptured Graffian follicle</li>
+                <li onclick="checkAnswer(this, false)">endometrium</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="question">
+            <h2>Seminiferous tubules are found in</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Testis</li>
+                <li onclick="checkAnswer(this, false)">Ovary</li>
+                <li onclick="checkAnswer(this, false)">Liver</li>
+                <li onclick="checkAnswer(this, false)">Kidney</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 13 -->
+<div class="question">
+    <h2>Which of the following enzymes is responsible for joining Okazaki fragments during DNA replication?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Ligase</li>
+        <li onclick="checkAnswer(this, false)">Primase</li>
+        <li onclick="checkAnswer(this, false)">Helicase</li>
+        <li onclick="checkAnswer(this, false)">DNA polymerase</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 14 -->
+<div class="question">
+    <h2>Which of the following is not a function of the smooth endoplasmic reticulum?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Lipid synthesis</li>
+        <li onclick="checkAnswer(this, false)">Detoxification</li>
+        <li onclick="checkAnswer(this, true)">Protein synthesis</li>
+        <li onclick="checkAnswer(this, false)">Calcium storage</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 15 -->
+<div class="question">
+    <h2>Which phase of the cell cycle is primarily responsible for DNA replication?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">S phase</li>
+        <li onclick="checkAnswer(this, false)">G1 phase</li>
+        
+        <li onclick="checkAnswer(this, false)">G2 phase</li>
+        <li onclick="checkAnswer(this, false)">M phase</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 16 -->
+<div class="question">
+    <h2>What is the name of the process by which mRNA is synthesized from a DNA template?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Transcription</li>
+        <li onclick="checkAnswer(this, false)">Translation</li>
+        <li onclick="checkAnswer(this, false)">Replication</li>
+        <li onclick="checkAnswer(this, false)">Reverse transcription</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 17 -->
+<div class="question">
+    <h2>What type of bond holds the two strands of a DNA double helix together?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Phosphodiester bonds</li>
+        <li onclick="checkAnswer(this, true)">Hydrogen bonds</li>
+        <li onclick="checkAnswer(this, false)">Ionic bonds</li>
+        <li onclick="checkAnswer(this, false)">Peptide bonds</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 18 -->
+<div class="question">
+    <h2>In eukaryotes, where does translation occur?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Nucleus</li>
+        <li onclick="checkAnswer(this, false)">Mitochondria</li>
+        <li onclick="checkAnswer(this, false)">Endoplasmic reticulum</li>
+        <li onclick="checkAnswer(this, true)">Cytoplasm</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 19 -->
+<div class="question">
+    <h2>Which of the following RNA types is responsible for carrying the genetic code from the nucleus to the ribosome?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">tRNA</li>
+        <li onclick="checkAnswer(this, true)">mRNA</li>
+        <li onclick="checkAnswer(this, false)">rRNA</li>
+        <li onclick="checkAnswer(this, false)">snRNA</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 20 -->
+<div class="question">
+    <h2>The lac operon in *E. coli* is an example of:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Inducible operon</li>
+        <li onclick="checkAnswer(this, false)">Repressible operon</li>
+        <li onclick="checkAnswer(this, false)">Constitutive operon</li>
+        <li onclick="checkAnswer(this, false)">None of the above</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 21 -->
+<div class="question">
+    <h2>What is the final product of glycolysis?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Glucose</li>
+        
+        <li onclick="checkAnswer(this, false)">Lactic acid</li>
+        <li onclick="checkAnswer(this, false)">Acetyl-CoA</li>
+        <li onclick="checkAnswer(this, true)">Pyruvate</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 22 -->
+<div class="question">
+    <h2>The process by which cells undergo programmed cell death is called:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Necrosis</li>
+        <li onclick="checkAnswer(this, true)">Apoptosis</li>
+        <li onclick="checkAnswer(this, false)">Autophagy</li>
+        <li onclick="checkAnswer(this, false)">Cell lysis</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 23 -->
+<div class="question">
+    <h2>Which of the following processes generates genetic diversity during meiosis?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">DNA replication</li>
+        <li onclick="checkAnswer(this, true)">Crossing over</li>
+        <li onclick="checkAnswer(this, false)">Cytokinesis</li>
+        <li onclick="checkAnswer(this, false)">Mitosis</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+
+        <!-- New Question 1 -->
+        <div class="question">
+            <h2>In a DNA strand, the nucleotides are linked together by:</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">glycosidic bonds</li>
+                <li onclick="checkAnswer(this, true)">phosphodiester bonds</li>
+                <li onclick="checkAnswer(this, false)">peptide bonds</li>
+                <li onclick="checkAnswer(this, false)">hydrogen bonds</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- New Question 2 -->
+        <div class="question">
+            <h2>A nucleoside differs from a nucleotide in that it lacks the:</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">base</li>
+                <li onclick="checkAnswer(this, true)">phosphate group</li>
+                <li onclick="checkAnswer(this, false)">sugar</li>
+                <li onclick="checkAnswer(this, false)">nitrogenous base</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- New Question 3 -->
+        <div class="question">
+            <h2>Which of the following is not a purine base?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Adenine</li>
+                <li onclick="checkAnswer(this, false)">Guanine</li>
+                <li onclick="checkAnswer(this, true)">Thymine</li>
+                <li onclick="checkAnswer(this, false)">None of the above</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- New Question 4 -->
+        <div class="question">
+            <h2>During DNA replication, which enzyme is responsible for unwinding the DNA helix?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">DNA polymerase</li>
+                <li onclick="checkAnswer(this, false)">Ligase</li>
+                <li onclick="checkAnswer(this, true)">Helicase</li>
+                <li onclick="checkAnswer(this, false)">Primase</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- New Question 5 -->
+        <div class="question">
+            <h2>The function of tRNA during protein synthesis is to:</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Carry the genetic message to ribosomes</li>
+                <li onclick="checkAnswer(this, true)">Bring amino acids to the ribosome</li>
+                <li onclick="checkAnswer(this, false)">Synthesize RNA primers</li>
+                <li onclick="checkAnswer(this, false)">None of the above</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- New Question 6 -->
+        <div class="question">
+            <h2>Which of the following statements about DNA structure is false?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">DNA is a double helix</li>
+                <li onclick="checkAnswer(this, true)">Bases are paired via covalent bonds</li>
+                <li onclick="checkAnswer(this, false)">Adenine pairs with thymine</li>
+                <li onclick="checkAnswer(this, false)">The two strands run anti-parallel</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+    </div>
+    <div></div>
+    <button class="back-btn" onclick="goBack()">Back</button>
+</div>
+
+    <script>
+        function checkAnswer(option, isCorrect) {
+            const allOptions = option.parentElement.querySelectorAll('li');
+            allOptions.forEach(opt => {
+                opt.style.pointerEvents = 'none'; 
+            });
+
+            if (isCorrect) {
+                option.classList.add('correct');
+            } else {
+                option.classList.add('incorrect');
+            }
+        }
+
+        function refreshQuestion(button) {
+            const options = button.previousElementSibling.querySelectorAll('li');
+            options.forEach(option => {
+                option.classList.remove('correct', 'incorrect');
+                option.style.pointerEvents = 'auto';
+            });
+        }
+        function goBack() {
+        window.history.back();
+        }
+    </script>
+
+</body>
+</html>

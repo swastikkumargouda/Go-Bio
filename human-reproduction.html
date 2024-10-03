@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .quiz-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Question title styling */
+.question h2 {
+    font-size: 1.8em;
+    color: #2e8b57;
+    margin-bottom: 20px;
+}
+
+/* Styling for the options list */
+.options {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.options li {
+    background-color: #f0f8ff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.2em;
+    border: 2px solid transparent;
+}
+
+/* Hover effect for options */
+.options li:hover {
+    background-color: #e6f7ff;
+    transform: scale(1.02);
+    border: 2px solid #2e8b57;
+}
+
+/* Correct and incorrect answer styles */
+.correct {
+    background-color: #4caf50 !important;
+    color: white;
+}
+
+.incorrect {
+    background-color: #f44336 !important;
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Human Reproduction Q&A</h1>
+    <div class="quiz-container">
+        <!-- Question 1 -->
+        <div class="question">
+            <h2>The mammalian corpus luteum produces</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Estrogen</li>
+                <li onclick="checkAnswer(this, true)">Progesterone</li>
+                <li onclick="checkAnswer(this, false)">Luteotropic hormone</li>
+                <li onclick="checkAnswer(this, false)">Luteinizing hormone</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 2 -->
+        <div class="question">
+            <h2>The function of the secretion of Prostate gland is to</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">stimulate sperm activity</li>
+                <li onclick="checkAnswer(this, false)">attract sperms</li>
+                <li onclick="checkAnswer(this, false)">inhibit sperm activity</li>
+                <li onclick="checkAnswer(this, false)">nourish sperms</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 3 -->
+        <div class="question">
+            <h2>The major part of the semen is the secretion of</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">cowper’s gland</li>
+                <li onclick="checkAnswer(this, true)">prostate gland</li>
+                <li onclick="checkAnswer(this, false)">perineal gland</li>
+                <li onclick="checkAnswer(this, false)">seminiferous tubules</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 4 -->
+        <div class="question">
+            <h2>In most mammals the testes are located in scrotal sac for</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">sex differentiation</li>
+                <li onclick="checkAnswer(this, true)">spermatogenesis</li>
+                <li onclick="checkAnswer(this, false)">more space to visceral organ</li>
+                <li onclick="checkAnswer(this, false)">independent functioning of kidney</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 5 -->
+        <div class="question">
+            <h2>Corpus luteum is developed from</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Leftover oocyte</li>
+                <li onclick="checkAnswer(this, false)">nephrostome</li>
+                <li onclick="checkAnswer(this, true)">Leftover graffian follicle after release of ovum</li>
+                <li onclick="checkAnswer(this, false)">none of these</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 6 -->
+        <div class="question">
+            <h2>The sperm become motile in human being in</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">seminiferous tubules</li>
+                <li onclick="checkAnswer(this, false)">vas deferens</li>
+                <li onclick="checkAnswer(this, true)">epididymis</li>
+                <li onclick="checkAnswer(this, false)">seminal vesicles</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 7 -->
+        <div class="question">
+            <h2>Which of the following has haploid chromosome?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">oogonia</li>
+                <li onclick="checkAnswer(this, false)">primary oocyte</li>
+                <li onclick="checkAnswer(this, true)">secondary oocyte</li>
+                <li onclick="checkAnswer(this, false)">primary spermatocyte</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 8 -->
+        <div class="question">
+            <h2>Egg released by Graffian follicle is surrounded by</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Zona pelucida</li>
+                <li onclick="checkAnswer(this, false)">Vitelline membrane</li>
+                <li onclick="checkAnswer(this, false)">Plasma membrane</li>
+                <li onclick="checkAnswer(this, false)">all of the above</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 9 -->
+        <div class="question">
+            <h2>A human female reaches menopause around the age of</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">70 years</li>
+                <li onclick="checkAnswer(this, false)">25 years</li>
+                <li onclick="checkAnswer(this, false)">15 years</li>
+                <li onclick="checkAnswer(this, true)">50 years</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 10 -->
+        <div class="question">
+            <h2>The differentiation of sex takes place</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">at the time of gamete fusion</li>
+                <li onclick="checkAnswer(this, false)">before fertilization</li>
+                <li onclick="checkAnswer(this, false)">at the time of gamete formation</li>
+                <li onclick="checkAnswer(this, true)">none of the above</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 11 -->
+        <div class="question">
+            <h2>During the ovulatory phase, the structure called corpus luteum is formed from</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">ruptured Graffian follicle</li>
+                <li onclick="checkAnswer(this, false)">epididymis</li>
+                <li onclick="checkAnswer(this, false)">isogamates</li>
+                <li onclick="checkAnswer(this, false)">endometrium</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 12 -->
+        <div class="question">
+            <h2>Seminiferous tubules are found in</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Testis</li>
+                <li onclick="checkAnswer(this, false)">Ovary</li>
+                <li onclick="checkAnswer(this, false)">Liver</li>
+                <li onclick="checkAnswer(this, false)">Kidney</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    </div>
+    <div>
+        <button class="back-btn" onclick="goBack()">Back</button>
+    </div>
+    
+    <script>
+        function checkAnswer(option, isCorrect) {
+    // Disable all options after a selection
+    const allOptions = option.parentElement.querySelectorAll('li');
+    allOptions.forEach(opt => {
+        opt.style.pointerEvents = 'none'; // Disable further clicking
+    });
+
+    // Check if the answer is correct or incorrect
+    if (isCorrect) {
+        option.classList.add('correct');  // Add correct class
+    } else {
+        option.classList.add('incorrect'); // Add incorrect class
+    }
+    }
+    function refreshQuestion(button) {
+            // Get all list items within the same question
+            const options = button.previousElementSibling.querySelectorAll('li');
+            options.forEach(option => {
+                option.classList.remove('correct', 'incorrect');
+                option.style.pointerEvents = 'auto';  // Re-enable clicking
+            });
+    }
+    function goBack() {
+        window.history.back();
+    }
+
+    </script>
+</body>
+
+</html>

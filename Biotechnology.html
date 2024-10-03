@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Question title styling */
+        .question h2 {
+            font-size: 1.8em;
+            color: #2e8b57;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for the options list */
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .options li {
+            background-color: #f0f8ff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.2em;
+            border: 2px solid transparent;
+        }
+
+        /* Hover effect for options */
+        .options li:hover {
+            background-color: #e6f7ff;
+            transform: scale(1.02);
+            border: 2px solid #2e8b57;
+        }
+
+        /* Correct and incorrect answer styles */
+        .correct {
+            background-color: #4caf50 !important;
+            color: white;
+        }
+
+        .incorrect {
+            background-color: #f44336 !important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Biotechnology Q&A</h1>
+    <div class="quiz-container">
+        <!-- Question 1 -->
+        <div class="question">
+            <h2>The polymerase chain reaction (PCR) is used for</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Sequencing RNA</li>
+                <li onclick="checkAnswer(this, true)">Amplifying DNA sequences</li>
+                <li onclick="checkAnswer(this, false)">Cloning proteins</li>
+                <li onclick="checkAnswer(this, false)">None of the above</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 2 -->
+        <div class="question">
+            <h2>Which enzyme is commonly used to cut DNA at specific sequences?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Ligase</li>
+                <li onclick="checkAnswer(this, false)">Polymerase</li>
+                <li onclick="checkAnswer(this, true)">Restriction enzyme</li>
+                <li onclick="checkAnswer(this, false)">Helicase</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 3 -->
+        <div class="question">
+            <h2>In recombinant DNA technology, a vector is used to</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Transfer DNA into host cells</li>
+                <li onclick="checkAnswer(this, false)">Amplify RNA</li>
+                <li onclick="checkAnswer(this, false)">Generate mutations</li>
+                <li onclick="checkAnswer(this, false)">Analyze protein structure</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 4 -->
+        <div class="question">
+            <h2>CRISPR technology is primarily used for</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Protein synthesis</li>
+                <li onclick="checkAnswer(this, true)">Gene editing</li>
+                <li onclick="checkAnswer(this, false)">RNA transcription</li>
+                <li onclick="checkAnswer(this, false)">Cell division</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 5 -->
+        <div class="question">
+            <h2>Which of the following is a common application of biotechnology in agriculture?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Genetic modification of crops</li>
+                <li onclick="checkAnswer(this, false)">Traditional breeding</li>
+                <li onclick="checkAnswer(this, false)">Soil nutrient management</li>
+                <li onclick="checkAnswer(this, false)">Crop rotation</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 6 -->
+        <div class="question">
+            <h2>The primary purpose of DNA sequencing is to</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Determine the structure of proteins</li>
+                <li onclick="checkAnswer(this, true)">Identify the nucleotide order in DNA</li>
+                <li onclick="checkAnswer(this, false)">Clone genes</li>
+                <li onclick="checkAnswer(this, false)">Amplify RNA</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 7 -->
+        <div class="question">
+            <h2>Which of the following is an example of a genetically modified organism (GMO)?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Organic corn</li>
+                <li onclick="checkAnswer(this, true)">Golden rice</li>
+                <li onclick="checkAnswer(this, false)">Conventional wheat</li>
+                <li onclick="checkAnswer(this, false)">Heirloom tomatoes</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 8 -->
+        <div class="question">
+            <h2>The use of microorganisms to produce drugs is known as</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Fermentation</li>
+                <li onclick="checkAnswer(this, false)">Photosynthesis</li>
+                <li onclick="checkAnswer(this, false)">Respiration</li>
+                <li onclick="checkAnswer(this, false)">Bioremediation</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 9 -->
+        <div class="question">
+            <h2>Biopharmaceuticals are produced using</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Chemical synthesis</li>
+                <li onclick="checkAnswer(this, true)">Biological processes</li>
+                <li onclick="checkAnswer(this, false)">Physical methods</li>
+                <li onclick="checkAnswer(this, false)">Geological processes</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 10 -->
+        <div class="question">
+            <h2>The technique of DNA fingerprinting is used for</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Determining genetic disorders</li>
+                <li onclick="checkAnswer(this, true)">Paternity testing</li>
+                <li onclick="checkAnswer(this, false)">Identifying species</li>
+                <li onclick="checkAnswer(this, false)">All of the above</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 11 -->
+        <div class="question">
+            <h2>In biotechnology, the term 'transgenic' refers to organisms that</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Contain genes from different species</li>
+                <li onclick="checkAnswer(this, false)">Are genetically identical</li>
+                <li onclick="checkAnswer(this, false)">Are produced through natural selection</li>
+                <li onclick="checkAnswer(this, false)">None of the above</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <div class="question">
+            <h2>Which of the following is an example of a palindromic sequence in DNA?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">AGCTT</li>
+                <li onclick="checkAnswer(this, true)">GAATTC</li>
+                <li onclick="checkAnswer(this, false)">TCGGAT</li>
+                <li onclick="checkAnswer(this, false)">CGTAAC</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <h2>What is the significance of palindromic sequences in restriction enzymes?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">They help DNA polymerase to bind.</li>
+                <li onclick="checkAnswer(this, true)">They are recognized by restriction enzymes to cut DNA.</li>
+                <li onclick="checkAnswer(this, false)">They assist in DNA replication.</li>
+                <li onclick="checkAnswer(this, false)">They are used to sequence proteins.</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <h2>Which of the following restriction enzymes recognizes a palindromic sequence?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">EcoRI</li>
+                <li onclick="checkAnswer(this, false)">Taq polymerase</li>
+                <li onclick="checkAnswer(this, false)">RNA polymerase</li>
+                <li onclick="checkAnswer(this, false)">Ligase</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <h2>In the context of DNA, what is a palindrome?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">A sequence of RNA that repeats.</li>
+                <li onclick="checkAnswer(this, true)">A sequence of DNA that reads the same forwards and backwards.</li>
+                <li onclick="checkAnswer(this, false)">A DNA mutation.</li>
+                <li onclick="checkAnswer(this, false)">A sequence of amino acids.</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <h2>How do palindromic sequences contribute to gene cloning?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">They prevent gene expression.</li>
+                <li onclick="checkAnswer(this, true)">They are sites where restriction enzymes cut DNA for cloning.</li>
+                <li onclick="checkAnswer(this, false)">They enhance the replication of plasmids.</li>
+                <li onclick="checkAnswer(this, false)">They aid in RNA transcription.</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <h2>What is the palindromic sequence recognized by the HindIII restriction enzyme?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">AAGCTT</li>
+                <li onclick="checkAnswer(this, false)">GAATTC</li>
+                <li onclick="checkAnswer(this, false)">ATCGTA</li>
+                <li onclick="checkAnswer(this, false)">CGGCAT</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <h2>Why are palindromic sequences important for restriction enzymes?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">They are involved in the replication of DNA.</li>
+                <li onclick="checkAnswer(this, true)">They are cut at specific points to insert genes.</li>
+                <li onclick="checkAnswer(this, false)">They prevent the expression of genes.</li>
+                <li onclick="checkAnswer(this, false)">They aid in protein folding.</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <h2>Which feature of palindromic DNA sequences makes them suitable for use in genetic engineering?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Their ability to form RNA sequences.</li>
+                <li onclick="checkAnswer(this, true)">Their symmetry, which allows for recognition by restriction enzymes.</li>
+                <li onclick="checkAnswer(this, false)">Their influence on gene regulation.</li>
+                <li onclick="checkAnswer(this, false)">Their role in protein synthesis.</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    
+        <!-- Question 12 -->
+        <div class="question">
+            <h2>Which technique is used to separate DNA fragments by size?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">PCR</li>
+                <li onclick="checkAnswer(this, true)">Gel electrophoresis</li>
+                <li onclick="checkAnswer(this, false)">Cloning</li>
+                <li onclick="checkAnswer(this, false)">Sequencing</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <div class="question">
+            <h2>What is the main function of the pBR322 plasmid?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Gene cloning and expression</li>
+                <li onclick="checkAnswer(this, false)">Protein synthesis</li>
+                <li onclick="checkAnswer(this, false)">RNA transcription</li>
+                <li onclick="checkAnswer(this, false)">Cellular respiration</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <h2>Which two antibiotic resistance genes are present in the pBR322 plasmid?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Kanamycin and Tetracycline</li>
+                <li onclick="checkAnswer(this, false)">Streptomycin and Erythromycin</li>
+                <li onclick="checkAnswer(this, true)">Ampicillin and Tetracycline</li>
+                <li onclick="checkAnswer(this, false)">Chloramphenicol and Rifampicin</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <h2>What type of plasmid is pBR322?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Conjugative plasmid</li>
+                <li onclick="checkAnswer(this, true)">Cloning plasmid</li>
+                <li onclick="checkAnswer(this, false)">Virulence plasmid</li>
+                <li onclick="checkAnswer(this, false)">Resistance plasmid</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <h2>What is the size of the pBR322 plasmid?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">5000 bp</li>
+                <li onclick="checkAnswer(this, false)">8000 bp</li>
+                <li onclick="checkAnswer(this, true)">4361 bp</li>
+                <li onclick="checkAnswer(this, false)">12000 bp</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <h2>Which enzyme is typically used to cut the pBR322 plasmid for gene insertion?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">DNA ligase</li>
+                <li onclick="checkAnswer(this, true)">Restriction endonuclease</li>
+                <li onclick="checkAnswer(this, false)">Reverse transcriptase</li>
+                <li onclick="checkAnswer(this, false)">DNA polymerase</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <h2>How does pBR322 enable the selection of transformed bacteria?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">By changing the color of colonies</li>
+                <li onclick="checkAnswer(this, false)">By making them fluorescent</li>
+                <li onclick="checkAnswer(this, true)">By providing antibiotic resistance genes</li>
+                <li onclick="checkAnswer(this, false)">By increasing their size</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    </div>
+    <div>
+        <button class="back-btn" onclick="goBack()">Back</button>
+    </div>
+    
+    <script>
+        function checkAnswer(option, isCorrect) {
+            // Disable all options after a selection
+            const allOptions = option.parentElement.querySelectorAll('li');
+            allOptions.forEach(opt => {
+                opt.style.pointerEvents = 'none'; // Disable further clicking
+            });
+
+            // Check if the answer is correct or incorrect
+            if (isCorrect) {
+                option.classList.add('correct');  // Add correct class
+            } else {
+                option.classList.add('incorrect'); // Add incorrect class
+            }
+        }
+
+        function refreshQuestion(button) {
+            // Get all list items within the same question
+            const options = button.previousElementSibling.querySelectorAll('li');
+            options.forEach(option => {
+                option.classList.remove('correct', 'incorrect');
+                option.style.pointerEvents = 'auto';  // Re-enable clicking
+            });
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Reproduction Q&A</title>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .question h2 {
+            font-size: 1.8em;
+            color: #2e8b57;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .options li {
+            background-color: #f0f8ff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.2em;
+            border: 2px solid transparent;
+        }
+
+        .options li:hover {
+            background-color: #e6f7ff;
+            transform: scale(1.02);
+            border: 2px solid #2e8b57;
+        }
+
+        .correct {
+            background-color: #4caf50 !important;
+            color: white;
+        }
+
+        .incorrect {
+            background-color: #f44336 !important;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Plant Reproduction Q&A</h1>
+    <div class="quiz-container">
+
+        <!-- Question 1 -->
+        <div class="question">
+            <h2>Which part of the flower develops into a fruit?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Petals</li>
+                <li onclick="checkAnswer(this, false)">Sepals</li>
+                <li onclick="checkAnswer(this, true)">Ovary</li>
+                <li onclick="checkAnswer(this, false)">Anther</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <h2>What is the main purpose of pollen in plants?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">To fertilize the ovule</li>
+                <li onclick="checkAnswer(this, false)">To produce nectar</li>
+                <li onclick="checkAnswer(this, false)">To grow leaves</li>
+                <li onclick="checkAnswer(this, false)">To store energy</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <h2>Double fertilization occurs in which type of plants?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Gymnosperms</li>
+                <li onclick="checkAnswer(this, true)">Angiosperms</li>
+                <li onclick="checkAnswer(this, false)">Bryophytes</li>
+                <li onclick="checkAnswer(this, false)">Algae</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <h2>Which structure protects seeds in flowering plants?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Fruit</li>
+                <li onclick="checkAnswer(this, false)">Root</li>
+                <li onclick="checkAnswer(this, false)">Stem</li>
+                <li onclick="checkAnswer(this, false)">Leaves</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <h2>In plants, where does photosynthesis primarily occur?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Leaves</li>
+                <li onclick="checkAnswer(this, false)">Roots</li>
+                <li onclick="checkAnswer(this, false)">Stem</li>
+                <li onclick="checkAnswer(this, false)">Flowers</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <h2>Which of the following plants reproduce through spores?</h2>
+            <ul class="options">
+                
+                <li onclick="checkAnswer(this, false)">Roses</li>
+                <li onclick="checkAnswer(this, true)">Ferns</li>
+                <li onclick="checkAnswer(this, false)">Mangoes</li>
+                <li onclick="checkAnswer(this, false)">Cacti</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <h2>Pollination is primarily carried out by</h2>
+            <ul class="options">
+                
+                <li onclick="checkAnswer(this, false)">Roots</li>
+                <li onclick="checkAnswer(this, false)">Water</li>
+                <li onclick="checkAnswer(this, true)">Insects</li>
+                <li onclick="checkAnswer(this, false)">Fruit</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <h2>Which plant hormone is responsible for fruit ripening?</h2>
+            <ul class="options">
+                
+                <li onclick="checkAnswer(this, false)">Auxin</li>
+                <li onclick="checkAnswer(this, false)">Gibberellin</li>
+                <li onclick="checkAnswer(this, true)">Ethylene</li>
+                <li onclick="checkAnswer(this, false)">Cytokinin</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <h2>What is the name of the male reproductive organ in a flower?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Stamen</li>
+                <li onclick="checkAnswer(this, false)">Pistil</li>
+                <li onclick="checkAnswer(this, false)">Ovary</li>
+                <li onclick="checkAnswer(this, false)">Sepal</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <h2>Which plant part is directly involved in sexual reproduction?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Flowers</li>
+                <li onclick="checkAnswer(this, false)">Leaves</li>
+                <li onclick="checkAnswer(this, false)">Roots</li>
+                <li onclick="checkAnswer(this, false)">Stem</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 11 -->
+<div class="question">
+    <h2>Which part of the flower is responsible for producing pollen?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Stigma</li>
+        <li onclick="checkAnswer(this, true)">Anther</li>
+        <li onclick="checkAnswer(this, false)">Petal</li>
+        <li onclick="checkAnswer(this, false)">Sepal</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 12 -->
+<div class="question">
+    <h2>Which process results in the formation of a zygote in plants?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Pollination</li>
+        <li onclick="checkAnswer(this, false)">Germination</li>
+        <li onclick="checkAnswer(this, false)">Propagation</li>
+        <li onclick="checkAnswer(this, true)">Fertilization</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 13 -->
+<div class="question">
+    <h2>What is the female reproductive part of a flower called?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Anther</li>
+        <li onclick="checkAnswer(this, false)">Stamen</li>
+        <li onclick="checkAnswer(this, true)">Pistil</li>
+        <li onclick="checkAnswer(this, false)">Sepal</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 14 -->
+<div class="question">
+    <h2>What structure forms after fertilization in plants?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Embryo sac</li>
+        <li onclick="checkAnswer(this, false)">Ovule</li>
+        <li onclick="checkAnswer(this, true)">Zygote</li>
+        <li onclick="checkAnswer(this, false)">Pollen tube</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 15 -->
+<div class="question">
+    <h2>What is the function of the stigma in a flower?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">To produce seeds</li>
+        <li onclick="checkAnswer(this, false)">To support the flower</li>
+        <li onclick="checkAnswer(this, false)">To produce ovules</li>
+        <li onclick="checkAnswer(this, true)">To receive pollen</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 16 -->
+<div class="question">
+    <h2>In flowering plants, which structure houses the ovules?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Ovary</li>
+        <li onclick="checkAnswer(this, false)">Anther</li>
+        <li onclick="checkAnswer(this, false)">Sepal</li>
+        <li onclick="checkAnswer(this, false)">Pollen sac</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 17 -->
+<div class="question">
+    <h2>Cross-pollination occurs between</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Same flower</li>
+        <li onclick="checkAnswer(this, false)">Same plant</li>
+        <li onclick="checkAnswer(this, false)">Two similar leaves</li>
+        <li onclick="checkAnswer(this, true)">Two different plants</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 18 -->
+<div class="question">
+    <h2>The transfer of pollen from an anther to a stigma is called</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Fertilization</li>
+        <li onclick="checkAnswer(this, true)">Pollination</li>
+        <li onclick="checkAnswer(this, false)">Germination</li>
+        <li onclick="checkAnswer(this, false)">Propagation</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 19 -->
+<div class="question">
+    <h2>What is the role of the pollen tube during fertilization?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">To transport sperm cells to the ovule</li>
+        <li onclick="checkAnswer(this, false)">To produce pollen grains</li>
+        <li onclick="checkAnswer(this, false)">To carry nutrients to the flower</li>
+        <li onclick="checkAnswer(this, false)">To create seeds</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 20 -->
+<div class="question">
+    <h2>Which of the following is an example of asexual reproduction in plants?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Fertilization</li>
+        <li onclick="checkAnswer(this, false)">Pollination</li>
+        <li onclick="checkAnswer(this, true)">Vegetative propagation</li>
+        <li onclick="checkAnswer(this, false)">Meiosis</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 13 -->
+<div class="question">
+    <h2>Pollination is the transfer of pollen grains from the anther to the</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">stigma</li>
+        <li onclick="checkAnswer(this, false)">ovary</li>
+        <li onclick="checkAnswer(this, false)">sepal</li>
+        <li onclick="checkAnswer(this, false)">petal</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 14 -->
+<div class="question">
+    <h2>Which type of pollination occurs when pollen from the same flower fertilizes the ovule?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Self-pollination</li>
+        <li onclick="checkAnswer(this, false)">Cross-pollination</li>
+        <li onclick="checkAnswer(this, false)">Wind pollination</li>
+        <li onclick="checkAnswer(this, false)">Animal pollination</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 15 -->
+<div class="question">
+    <h2>Which of the following agents is NOT responsible for pollination?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Wind</li>
+        <li onclick="checkAnswer(this, false)">Insects</li>
+        <li onclick="checkAnswer(this, false)">Water</li>
+        <li onclick="checkAnswer(this, true)">Gravity</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 16 -->
+<div class="question">
+    <h2>Which pollination method involves water as the agent of pollen transfer?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Hydrophily</li>
+        <li onclick="checkAnswer(this, false)">Anemophily</li>
+        <li onclick="checkAnswer(this, false)">Entomophily</li>
+        <li onclick="checkAnswer(this, false)">Zoophily</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 17 -->
+<div class="question">
+    <h2>Which structure in flowers attracts insects for pollination?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Sepals</li>
+        <li onclick="checkAnswer(this, false)">Anther</li>
+        <li onclick="checkAnswer(this, true)">Petals</li>
+        <li onclick="checkAnswer(this, false)">Stigma</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 18 -->
+<div class="question">
+    <h2>In cross-pollination, pollen grains are transferred from</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">one anther to another anther</li>
+        <li onclick="checkAnswer(this, true)">one flower to another</li>
+        <li onclick="checkAnswer(this, false)">one sepal to another sepal</li>
+        <li onclick="checkAnswer(this, false)">one ovule to another ovule</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 19 -->
+<div class="question">
+    <h2>Which of the following is a characteristic of wind-pollinated flowers?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Light pollen grains</li>
+        <li onclick="checkAnswer(this, false)">Brightly colored petals</li>
+        <li onclick="checkAnswer(this, false)">Large nectar glands</li>
+        <li onclick="checkAnswer(this, false)">Fragrant flowers</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 20 -->
+<div class="question">
+    <h2>Which flower structure receives the pollen during pollination?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Ovary</li>
+        <li onclick="checkAnswer(this, false)">Style</li>
+        <li onclick="checkAnswer(this, false)">Anther</li>
+        <li onclick="checkAnswer(this, true)">Stigma</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 21 -->
+<div class="question">
+    <h2>Which of the following insects is commonly associated with pollination?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Mosquito</li>
+        <li onclick="checkAnswer(this, false)">Ant</li>
+        <li onclick="checkAnswer(this, false)">Termite</li>
+        <li onclick="checkAnswer(this, true)">Bee</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 22 -->
+<div class="question">
+    <h2>Pollination is essential for the formation of</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">roots</li>
+        <li onclick="checkAnswer(this, false)">stems</li>
+        <li onclick="checkAnswer(this, true)">seeds</li>
+        <li onclick="checkAnswer(this, false)">leaves</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+
+<!-- Question 23 -->
+<div class="question">
+    <h2>The male gametophyte in angiosperms is represented by</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Pollen grain</li>
+        <li onclick="checkAnswer(this, false)">Anther</li>
+        <li onclick="checkAnswer(this, false)">Ovary</li>
+        <li onclick="checkAnswer(this, false)">Embryo sac</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 24 -->
+<div class="question">
+    <h2>Which structure in angiosperms contains the female gametophyte?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Pollen tube</li>
+        <li onclick="checkAnswer(this, false)">Anther</li>
+        <li onclick="checkAnswer(this, true)">Embryo sac</li>
+        <li onclick="checkAnswer(this, false)">Style</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 25 -->
+<div class="question">
+    <h2>In angiosperms, how many cells and nuclei are present in a mature embryo sac (female gametophyte)?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">6 cells, 6 nuclei</li>
+        <li onclick="checkAnswer(this, false)">8 cells, 7 nuclei</li>
+        <li onclick="checkAnswer(this, false)">8 cells, 8 nuclei</li>
+        <li onclick="checkAnswer(this, true)">7 cells, 8 nuclei</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 26 -->
+<div class="question">
+    <h2>The generative cell in pollen grain divides to form</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Two male gametes</li>
+        <li onclick="checkAnswer(this, false)">Pollen tube</li>
+        <li onclick="checkAnswer(this, false)">Sperm nucleus</li>
+        <li onclick="checkAnswer(this, false)">Synergids</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 27 -->
+<div class="question">
+    <h2>In angiosperms, which part of the male gametophyte forms the pollen tube?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Generative cell</li>
+        <li onclick="checkAnswer(this, false)">Sporangium</li>
+        <li onclick="checkAnswer(this, true)">Vegetative cell</li>
+        <li onclick="checkAnswer(this, false)">Anther wall</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 28 -->
+<div class="question">
+    <h2>Which of the following cells guide the pollen tube to the egg apparatus?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Antipodal cells</li>
+        <li onclick="checkAnswer(this, false)">Polar nuclei</li>
+        <li onclick="checkAnswer(this, false)">Egg cell</li>
+        <li onclick="checkAnswer(this, true)">Synergids</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 29 -->
+<div class="question">
+    <h2>Which structure is diploid in the female gametophyte of angiosperms?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Synergid</li>
+        <li onclick="checkAnswer(this, true)">Polar nuclei</li>
+        <li onclick="checkAnswer(this, false)">Egg cell</li>
+        <li onclick="checkAnswer(this, false)">Antipodal cell</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 30 -->
+<div class="question">
+    <h2>The process of double fertilization in angiosperms involves the fusion of</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Two male gametes with the egg</li>
+        <li onclick="checkAnswer(this, true)">One male gamete with the egg and another male gamete with polar nuclei</li>
+        <li onclick="checkAnswer(this, false)">Two male gametes with synergids</li>
+        <li onclick="checkAnswer(this, false)">One male gamete with antipodal cells</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 31 -->
+<div class="question">
+    <h2>During the development of male gametophyte, the microspore undergoes</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">One meiotic division</li>
+        <li onclick="checkAnswer(this, true)">One mitotic division</li>
+        <li onclick="checkAnswer(this, false)">Two meiotic divisions</li>
+        <li onclick="checkAnswer(this, false)">Two mitotic divisions</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 32 -->
+<div class="question">
+    <h2>The egg apparatus in the female gametophyte consists of</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">One egg cell and two synergids</li>
+        <li onclick="checkAnswer(this, false)">Two egg cells and one synergid</li>
+        <li onclick="checkAnswer(this, false)">Three egg cells</li>
+        <li onclick="checkAnswer(this, false)">One egg cell and three synergids</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+<!-- Question 33 -->
+<div class="question">
+    <h2>Endosperm development in angiosperms is initiated by</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Fusion of synergids</li>
+        <li onclick="checkAnswer(this, false)">Fusion of the egg cell with one male gamete</li>
+        <li onclick="checkAnswer(this, true)">Fusion of the second male gamete with the polar nuclei</li>
+        <li onclick="checkAnswer(this, false)">Antipodal cell division</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 34 -->
+<div class="question">
+    <h2>After fertilization, the ovary of an angiosperm develops into</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Seed</li>
+        <li onclick="checkAnswer(this, true)">Fruit</li>
+        <li onclick="checkAnswer(this, false)">Embryo sac</li>
+        <li onclick="checkAnswer(this, false)">Cotyledon</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 35 -->
+<div class="question">
+    <h2>What is the fate of the ovule after fertilization in angiosperms?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">It develops into a seed</li>
+        <li onclick="checkAnswer(this, false)">It becomes a pollen grain</li>
+        <li onclick="checkAnswer(this, false)">It forms the fruit wall</li>
+        <li onclick="checkAnswer(this, false)">It degenerates</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 36 -->
+<div class="question">
+    <h2>The structure formed after fertilization and responsible for nourishing the embryo is</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Endosperm</li>
+        <li onclick="checkAnswer(this, false)">Zygote</li>
+        <li onclick="checkAnswer(this, false)">Embryo sac</li>
+        <li onclick="checkAnswer(this, false)">Synergid</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 37 -->
+<div class="question">
+    <h2>The diploid zygote in angiosperms eventually develops into</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Seed coat</li>
+        <li onclick="checkAnswer(this, false)">Endosperm</li>
+        <li onclick="checkAnswer(this, false)">Fruit</li>
+        <li onclick="checkAnswer(this, true)">Embryo</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 38 -->
+<div class="question">
+    <h2>The role of the integuments in the ovule after fertilization is</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">They become the endosperm</li>
+        <li onclick="checkAnswer(this, true)">They develop into the seed coat</li>
+        <li onclick="checkAnswer(this, false)">They become cotyledons</li>
+        <li onclick="checkAnswer(this, false)">They form the embryo sac</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 39 -->
+<div class="question">
+    <h2>In angiosperms, the seed dispersal process is aided by the development of</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Zygote</li>
+        <li onclick="checkAnswer(this, false)">Embryo sac</li>
+        <li onclick="checkAnswer(this, true)">Fruit</li>
+        <li onclick="checkAnswer(this, false)">Endosperm</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 40 -->
+<div class="question">
+    <h2>Double fertilization in angiosperms leads to the formation of</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Two embryos</li>
+        <li onclick="checkAnswer(this, true)">Embryo and endosperm</li>
+        <li onclick="checkAnswer(this, false)">Two endosperms</li>
+        <li onclick="checkAnswer(this, false)">Zygote and polar nuclei</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 41 -->
+<div class="question">
+    <h2>Which of the following is NOT a post-fertilization event in angiosperms?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Formation of pollen grains</li>
+        <li onclick="checkAnswer(this, false)">Seed formation</li>
+        <li onclick="checkAnswer(this, false)">Embryo development</li>
+        <li onclick="checkAnswer(this, false)">Fruit formation</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 42 -->
+<div class="question">
+    <h2>In angiosperms, what structure is responsible for nourishing the developing embryo?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Zygote</li>
+        <li onclick="checkAnswer(this, false)">Synergid</li>
+        <li onclick="checkAnswer(this, true)">Endosperm</li>
+        <li onclick="checkAnswer(this, false)">Polar nuclei</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 43 -->
+<div class="question">
+    <h2>Which part of the seed forms the protective covering in angiosperms?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Endosperm</li>
+        <li onclick="checkAnswer(this, false)">Cotyledon</li>
+        <li onclick="checkAnswer(this, true)">Seed coat</li>
+        <li onclick="checkAnswer(this, false)">Embryo sac</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 44 -->
+<div class="question">
+    <h2>Which of the following processes is involved in seed formation?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Double fertilization</li>
+        <li onclick="checkAnswer(this, false)">Cross-pollination</li>
+        <li onclick="checkAnswer(this, true)">Fertilization of the ovule</li>
+        <li onclick="checkAnswer(this, false)">Photoperiodism</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 45 -->
+<div class="question">
+    <h2>What part of the angiosperm develops into the fruit after fertilization?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Ovule</li>
+        <li onclick="checkAnswer(this, false)">Zygote</li>
+        <li onclick="checkAnswer(this, true)">Ovary</li>
+        <li onclick="checkAnswer(this, false)">Endosperm</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 46 -->
+<div class="question">
+    <h2>After fertilization, the zygote undergoes multiple divisions to form the</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Embryo</li>
+        <li onclick="checkAnswer(this, false)">Endosperm</li>
+        <li onclick="checkAnswer(this, false)">Fruit</li>
+        <li onclick="checkAnswer(this, false)">Seed coat</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 47 -->
+<div class="question">
+    <h2>What is the main function of the seed coat in angiosperms?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Nourishing the embryo</li>
+        <li onclick="checkAnswer(this, true)">Protecting the embryo</li>
+        <li onclick="checkAnswer(this, false)">Facilitating pollination</li>
+        <li onclick="checkAnswer(this, false)">Producing pollen grains</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 48 -->
+<div class="question">
+    <h2>In angiosperms, which part of the ovule develops into the seed?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Integuments</li>
+        <li onclick="checkAnswer(this, true)">Ovule</li>
+        <li onclick="checkAnswer(this, false)">Micropyle</li>
+        <li onclick="checkAnswer(this, false)">Pollen tube</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 49 -->
+<div class="question">
+    <h2>The post-fertilization structure that gives rise to cotyledons is</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Endosperm</li>
+        <li onclick="checkAnswer(this, false)">Ovule</li>
+        <li onclick="checkAnswer(this, true)">Embryo</li>
+        <li onclick="checkAnswer(this, false)">Pollen grain</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 50 -->
+<div class="question">
+    <h2>Which structure forms the nutritive tissue in a seed after double fertilization?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Endosperm</li>
+        <li onclick="checkAnswer(this, false)">Embryo sac</li>
+        <li onclick="checkAnswer(this, false)">Synergid</li>
+        <li onclick="checkAnswer(this, false)">Zygote</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 51 -->
+<div class="question">
+    <h2>After fertilization, the integuments of the ovule become the</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Fruit</li>
+        <li onclick="checkAnswer(this, true)">Seed coat</li>
+        <li onclick="checkAnswer(this, false)">Endosperm</li>
+        <li onclick="checkAnswer(this, false)">Embryo sac</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 52 -->
+<div class="question">
+    <h2>In a typical angiosperm seed, which structure stores food for the developing embryo?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Endosperm</li>
+        <li onclick="checkAnswer(this, false)">Integument</li>
+        <li onclick="checkAnswer(this, false)">Seed coat</li>
+        <li onclick="checkAnswer(this, false)">Pollen tube</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 53 -->
+<div class="question">
+    <h2>What happens to the antipodal cells in the ovule after fertilization?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">They become the embryo sac</li>
+        <li onclick="checkAnswer(this, false)">They fuse to form the endosperm</li>
+        <li onclick="checkAnswer(this, false)">They develop into synergids</li>
+        <li onclick="checkAnswer(this, true)">They degenerate</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 54 -->
+<div class="question">
+    <h2>The primary function of the micropyle in a seed after fertilization is</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">To form the pollen tube</li>
+        <li onclick="checkAnswer(this, true)">To allow water and gases to enter</li>
+        <li onclick="checkAnswer(this, false)">To develop into the embryo</li>
+        <li onclick="checkAnswer(this, false)">To help in seed dispersal</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+
+
+
+
+
+    </div>
+
+    <div>
+        <button class="back-btn" onclick="goBack()">Back</button>
+    </div>
+    
+    <script>
+        function checkAnswer(option, isCorrect) {
+            const allOptions = option.parentElement.querySelectorAll('li');
+            allOptions.forEach(opt => {
+                opt.style.pointerEvents = 'none'; // Disable further clicking
+            });
+
+            if (isCorrect) {
+                option.classList.add('correct');
+            } else {
+                option.classList.add('incorrect');
+            }
+        }
+
+        function refreshQuestion(button) {
+            const options = button.previousElementSibling.querySelectorAll('li');
+            options.forEach(option => {
+                option.classList.remove('correct', 'incorrect');
+                option.style.pointerEvents = 'auto'; // Re-enable clicking
+            });
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

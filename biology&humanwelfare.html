@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Question title styling */
+        .question h2 {
+            font-size: 1.8em;
+            color: #2e8b57;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for the options list */
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .options li {
+            background-color: #f0f8ff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.2em;
+            border: 2px solid transparent;
+        }
+
+        /* Hover effect for options */
+        .options li:hover {
+            background-color: #e6f7ff;
+            transform: scale(1.02);
+            border: 2px solid #2e8b57;
+        }
+
+        /* Correct and incorrect answer styles */
+        .correct {
+            background-color: #4caf50 !important;
+            color: white;
+        }
+
+        .incorrect {
+            background-color: #f44336 !important;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Biology & Humanwelfare Q&A</h1>
+    <div class="quiz-container">
+        <!-- Question 41 -->
+        <div class="question">
+            <h2>Monocytes differentiate into which kind of phagocytic cells?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">B – cells</li>
+                <li onclick="checkAnswer(this, true)">macrophages</li>
+                <li onclick="checkAnswer(this, false)">neutrophils</li>
+                <li onclick="checkAnswer(this, false)">T – cells</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 42 -->
+        <div class="question">
+            <h2>If a graft is always rejected, it is called:</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Homograft</li>
+                <li onclick="checkAnswer(this, false)">Isograft</li>
+                <li onclick="checkAnswer(this, false)">Autograft</li>
+                <li onclick="checkAnswer(this, true)">Heterograft</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 43 -->
+        <div class="question">
+            <h2>The principal lines of defence in our body are:</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">one</li>
+                <li onclick="checkAnswer(this, false)">two</li>
+                <li onclick="checkAnswer(this, true)">three</li>
+                <li onclick="checkAnswer(this, false)">numerous</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 44 -->
+        <div class="question">
+            <h2>Which is an autoimmune disease?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Asthma</li>
+                <li onclick="checkAnswer(this, false)">Cancer</li>
+                <li onclick="checkAnswer(this, true)">Rheumatoid arthritis</li>
+                <li onclick="checkAnswer(this, false)">None of the above</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 45 -->
+        <div class="question">
+            <h2>General defence system of body forms:</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Acquired immunity</li>
+                <li onclick="checkAnswer(this, true)">Innate immunity</li>
+                <li onclick="checkAnswer(this, false)">Both (i) and (ii)</li>
+                <li onclick="checkAnswer(this, false)">none of these</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 46 -->
+        <div class="question">
+            <h2>The major phagocytic cells are:</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Lymphocytes</li>
+                <li onclick="checkAnswer(this, true)">Macrophages</li>
+                <li onclick="checkAnswer(this, false)">Plasma cells</li>
+                <li onclick="checkAnswer(this, false)">Mast cells</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 47 -->
+        <div class="question">
+            <h2>Immunoglobulins are:</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">antibodies</li>
+                <li onclick="checkAnswer(this, false)">antigen</li>
+                <li onclick="checkAnswer(this, false)">antibiotic</li>
+                <li onclick="checkAnswer(this, false)">antiseptic</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 48 -->
+        <div class="question">
+            <h2>LSD is derived from:</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Cocoa plant</li>
+                <li onclick="checkAnswer(this, false)">Poppy plant</li>
+                <li onclick="checkAnswer(this, true)">Hemp plant</li>
+                <li onclick="checkAnswer(this, false)">Fungus</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 49 -->
+        <div class="question">
+            <h2>Excessive consumption of alcohol damages:</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Liver</li>
+                <li onclick="checkAnswer(this, false)">Heart</li>
+                <li onclick="checkAnswer(this, false)">Lung</li>
+                <li onclick="checkAnswer(this, false)">Kidney</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 50 -->
+        <div class="question">
+            <h2>Which part of the brain has earliest ill effects in a drunk person:</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Cerebrum</li>
+                <li onclick="checkAnswer(this, true)">Cerebellum</li>
+                <li onclick="checkAnswer(this, false)">Medulla</li>
+                <li onclick="checkAnswer(this, false)">Mid brain</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 51 -->
+        <div class="question">
+            <h2>At which stage of HIV infection does one usually show symptoms of AIDS?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">within 15 days of sexual contact with an infected person</li>
+                <li onclick="checkAnswer(this, false)">when the infected retro virus enters host cells</li>
+                <li onclick="checkAnswer(this, true)">when HIV damages large number of helper T-lymphocytes</li>
+                <li onclick="checkAnswer(this, false)">when the viral DNA is produced by reverse transcriptase</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 52 -->
+        <div class="question">
+            <h2>Infection of Ascaris usually occurs by:</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">drinking water containing egg of Ascaris</li>
+                <li onclick="checkAnswer(this, false)">eating imperfectly cooked pork</li>
+                <li onclick="checkAnswer(this, false)">tse – tse fly</li>
+                <li onclick="checkAnswer(this, false)">saliva of infected person</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 53 -->
+        <div class="question">
+            <h2>First test tube baby was born in:</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">1978</li>
+                <li onclick="checkAnswer(this, false)">1976</li>
+                <li onclick="checkAnswer(this, false)">1980</li>
+                <li onclick="checkAnswer(this, false)">1982</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 54 -->
+        <div class="question">
+            <h2>The most common vector for spreading malaria is:</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Housefly</li>
+                <li onclick="checkAnswer(this, false)">Cockroach</li>
+                <li onclick="checkAnswer(this, true)">Anopheles</li>
+                <li onclick="checkAnswer(this, false)">Sandfly</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 55 -->
+        <div class="question">
+            <h2>The vaccine for AIDS has been developed by:</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Salk</li>
+                <li onclick="checkAnswer(this, false)">Koch</li>
+                <li onclick="checkAnswer(this, false)">Louis Pasteur</li>
+                <li onclick="checkAnswer(this, true)">None of the above</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 56 -->
+        <div class="question">
+            <h2>Which of the following is not a viral disease?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">HIV</li>
+                <li onclick="checkAnswer(this, false)">Hepatitis</li>
+                <li onclick="checkAnswer(this, true)">Tetanus</li>
+                <li onclick="checkAnswer(this, false)">Flu</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 57 -->
+        <div class="question">
+            <h2>Insulin is produced by:</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Adrenal gland</li>
+                <li onclick="checkAnswer(this, true)">Pancreas</li>
+                <li onclick="checkAnswer(this, false)">Pituitary gland</li>
+                <li onclick="checkAnswer(this, false)">Thyroid gland</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 58 -->
+        <div class="question">
+            <h2>Which hormone helps in the regulation of blood pressure?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Insulin</li>
+                <li onclick="checkAnswer(this, false)">Adrenaline</li>
+                <li onclick="checkAnswer(this, true)">Aldosterone</li>
+                <li onclick="checkAnswer(this, false)">Thyroxine</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 59 -->
+        <div class="question">
+            <h2>Which one of the following is a water-soluble vitamin?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Vitamin A</li>
+                <li onclick="checkAnswer(this, false)">Vitamin D</li>
+                <li onclick="checkAnswer(this, false)">Vitamin E</li>
+                <li onclick="checkAnswer(this, true)">Vitamin C</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+        
+        <!-- Question 60 -->
+        <div class="question">
+            <h2>Which hormone is secreted by the pituitary gland?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Growth hormone</li>
+                <li onclick="checkAnswer(this, false)">Insulin</li>
+                <li onclick="checkAnswer(this, false)">Thyroxine</li>
+                <li onclick="checkAnswer(this, false)">Cortisol</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    </div>
+    <div></div>
+        <button class="back-btn" onclick="goBack()">Back</button>
+    </div>
+    
+    <script>
+        function checkAnswer(option, isCorrect) {
+            const options = option.parentElement.children;
+            for (let i = 0; i < options.length; i++) {
+                options[i].classList.remove("correct", "incorrect");
+                options[i].style.pointerEvents = "none"; // Disable further clicks
+            }
+            if (isCorrect) {
+                option.classList.add("correct");
+            } else {
+                option.classList.add("incorrect");
+            }
+        }
+
+        function refreshQuestion(button) {
+            const questionDiv = button.parentElement;
+            const options = questionDiv.querySelector(".options").children;
+
+            for (let i = 0; i < options.length; i++) {
+                options[i].classList.remove("correct", "incorrect");
+                options[i].style.pointerEvents = "auto"; // Enable clicks again
+            }
+        }
+        function goBack() {
+        window.history.back();
+        }
+    </script>
+</body>
+</html>

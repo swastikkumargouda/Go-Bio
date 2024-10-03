@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Reproduction Quiz</title>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .question h2 {
+            font-size: 1.8em;
+            color: #2e8b57;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .options li {
+            background-color: #f0f8ff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.2em;
+            border: 2px solid transparent;
+        }
+
+        .options li:hover {
+            background-color: #e6f7ff;
+            transform: scale(1.02);
+            border: 2px solid #2e8b57;
+        }
+
+        .correct {
+            background-color: #4caf50 !important;
+            color: white;
+        }
+
+        .incorrect {
+            background-color: #f44336 !important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reproductive Health Q&A</h1>
+    <div class="quiz-container">
+
+        <!-- Existing Questions -->
+        <!-- Question 1 to 12 (Same as before) -->
+
+        <!-- New Questions -->
+
+        <!-- Question 13 -->
+        <div class="question">
+            <h2>Sterilisation technique is</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Loop</li>
+                <li onclick="checkAnswer(this, false)">Diaphragm</li>
+                <li onclick="checkAnswer(this, true)">Tubectomy</li>
+                <li onclick="checkAnswer(this, false)">Cervical cap</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="question">
+            <h2>Causes of world population explosion is</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Better health care</li>
+                <li onclick="checkAnswer(this, false)">Increased agricultural production</li>
+                <li onclick="checkAnswer(this, false)">More jobs</li>
+                <li onclick="checkAnswer(this, false)">Fewer wars</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="question">
+            <h2>A contraceptive pill contains</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Progesterone and estrogen</li>
+                <li onclick="checkAnswer(this, false)">Spermicidal salts</li>
+                <li onclick="checkAnswer(this, false)">Chemicals that cause automatic abortion</li>
+                <li onclick="checkAnswer(this, false)">Chemicals that prevent fertilization of ovum</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 16 -->
+        <div class="question">
+            <h2>An IUCD is</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Copper-T</li>
+                <li onclick="checkAnswer(this, false)">Condom</li>
+                <li onclick="checkAnswer(this, false)">Vasectomy</li>
+                <li onclick="checkAnswer(this, false)">Pill</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 17 -->
+        <div class="question">
+            <h2>Purpose of tubectomy is to prevent</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Coitus</li>
+                <li onclick="checkAnswer(this, false)">Egg formation</li>
+                <li onclick="checkAnswer(this, true)">Fertilization</li>
+                <li onclick="checkAnswer(this, false)">Embryonic development</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 18 -->
+        <div class="question">
+            <h2>Which is related to males?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Oral pill</li>
+                <li onclick="checkAnswer(this, false)">Tubectomy</li>
+                <li onclick="checkAnswer(this, true)">Vasectomy</li>
+                <li onclick="checkAnswer(this, false)">None of the above</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 19 -->
+        <div class="question">
+            <h2>The test used for studying genetic and metabolic defects of an unborn baby is</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Amniocentesis</li>
+                <li onclick="checkAnswer(this, false)">Erythroblastosis</li>
+                <li onclick="checkAnswer(this, false)">Cystic fibrosis</li>
+                <li onclick="checkAnswer(this, false)">Phenylketonuria</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 20 -->
+        <div class="question">
+            <h2>In which of the following methods Zygotes or early embryos can be transferred into the fallopian tube?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">GIFT</li>
+                <li onclick="checkAnswer(this, false)">IUT</li>
+                <li onclick="checkAnswer(this, true)">ZIFT</li>
+                <li onclick="checkAnswer(this, false)">ICSI</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 21 -->
+        <div class="question">
+            <h2>Which of the following can be used as emergency contraceptives?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Progestogens</li>
+                <li onclick="checkAnswer(this, false)">IUD within 72 hours</li>
+                <li onclick="checkAnswer(this, true)">Both (i) & (ii)</li>
+                <li onclick="checkAnswer(this, false)">Diaphragms</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 22 -->
+        <div class="question">
+            <h2>Couple unable to produce children despite unprotected sexual cohabitation is termed as:</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Impotency</li>
+                <li onclick="checkAnswer(this, true)">Infertility</li>
+                <li onclick="checkAnswer(this, false)">STD</li>
+                <li onclick="checkAnswer(this, false)">PID</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 23 -->
+        <div class="question">
+            <h2>Injectable form of hormone-based contraceptive is</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Norplant</li>
+                <li onclick="checkAnswer(this, true)">Depo-provera</li>
+                <li onclick="checkAnswer(this, false)">Mala-D</li>
+                <li onclick="checkAnswer(this, false)">Saheli</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 24 -->
+        <div class="question">
+            <h2>Test tube baby is one who</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Is reared on artificial medium outside the womb</li>
+                <li onclick="checkAnswer(this, false)">Grows inside the fallopian tube instead of uterus</li>
+                <li onclick="checkAnswer(this, true)">Is a zygote formed by IVF and implanted in the female</li>
+                <li onclick="checkAnswer(this, false)">Is produced by tissue culture method</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+    </div>
+    <div></div>
+        <button class="back-btn" onclick="goBack()">Back</button>
+    </div>
+    <script>
+        function checkAnswer(option, isCorrect) {
+    // Disable all options after a selection
+    const allOptions = option.parentElement.querySelectorAll('li');
+    allOptions.forEach(opt => {
+        opt.style.pointerEvents = 'none'; // Disable further clicking
+    });
+
+    // Check if the answer is correct or incorrect
+    if (isCorrect) {
+        option.classList.add('correct');  // Add correct class
+    } else {
+        option.classList.add('incorrect'); // Add incorrect class
+    }
+    }
+    function refreshQuestion(button) {
+            // Get all list items within the same question
+            const options = button.previousElementSibling.querySelectorAll('li');
+            options.forEach(option => {
+                option.classList.remove('correct', 'incorrect');
+                option.style.pointerEvents = 'auto';  // Re-enable clicking
+            });
+    }
+    function goBack() {
+        window.history.back();
+    }
+
+    </script>
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .quiz-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Question title styling */
+.question h2 {
+    font-size: 1.8em;
+    color: #2e8b57;
+    margin-bottom: 20px;
+}
+
+/* Styling for the options list */
+.options {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.options li {
+    background-color: #f0f8ff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.2em;
+    border: 2px solid transparent;
+}
+
+/* Hover effect for options */
+.options li:hover {
+    background-color: #e6f7ff;
+    transform: scale(1.02);
+    border: 2px solid #2e8b57;
+}
+
+/* Correct and incorrect answer styles */
+.correct {
+    background-color: #4caf50 !important;
+    color: white;
+}
+
+.incorrect {
+    background-color: #f44336 !important;
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Biotechnology & Itsapplication Q&A</h1>
+    <div class="quiz-container">
+        <!-- Question 1 -->
+<div class="question">
+    <h2>What is antisense technology?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">When a piece of RNA that is complementary in sequence is used to stop expression of a specific gene.</li>
+        <li onclick="checkAnswer(this, false)">RNA polymerase producing DNA.</li>
+        <li onclick="checkAnswer(this, false)">A cell displaying a foreign antigen used for synthesis of antigens.</li>
+        <li onclick="checkAnswer(this, false)">Production of somaclonal variants in tissue cultures.</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 2 -->
+<div class="question">
+    <h2>Cry I endotoxins obtained from Bacillus thuringiensis are effective against:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Nematodes</li>
+        <li onclick="checkAnswer(this, true)">Bollworms</li>
+        <li onclick="checkAnswer(this, false)">Mosquitoes</li>
+        <li onclick="checkAnswer(this, false)">Flies</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 3 -->
+<div class="question">
+    <h2>Human insulin is being commercially produced from a transgenic species of:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Rhizobium</li>
+        <li onclick="checkAnswer(this, false)">Saccharomyces</li>
+        <li onclick="checkAnswer(this, true)">Escherichia</li>
+        <li onclick="checkAnswer(this, false)">Mycobacterium</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 4 -->
+<div class="question">
+    <h2>Which one of the following is commonly used in transfer of foreign DNA into crop plants?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Meloidogyne incognita</li>
+        <li onclick="checkAnswer(this, true)">Agrobacterium tumefaciens</li>
+        <li onclick="checkAnswer(this, false)">Penicillium expansum</li>
+        <li onclick="checkAnswer(this, false)">Trichoderma harzianum</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 5 -->
+<div class="question">
+    <h2>What is true about Bt toxin?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Bt protein exists as active toxin in the Bacillus.</li>
+        <li onclick="checkAnswer(this, false)">The activated toxin enters the ovaries of the pest to sterilize it.</li>
+        <li onclick="checkAnswer(this, false)">The concerned Bacillus has antitoxins.</li>
+        <li onclick="checkAnswer(this, true)">The inactive protoxin gets converted into active form in the insect gut.</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 6 -->
+<div class="question">
+    <h2>Genetic engineering has been successfully used for producing:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Transgenic mice for testing safety of polio vaccine before use in humans</li>
+        <li onclick="checkAnswer(this, true)">Transgenic models for studying new treatments for certain cardiac diseases</li>
+        <li onclick="checkAnswer(this, false)">Transgenic insect for pest control</li>
+        <li onclick="checkAnswer(this, false)">Transgenic potato of more amount of starch</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 7 -->
+<div class="question">
+    <h2>Bt cotton is not:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">A GM plant</li>
+        <li onclick="checkAnswer(this, false)">Insect resistant</li>
+        <li onclick="checkAnswer(this, false)">A bacterial gene expressing system</li>
+        <li onclick="checkAnswer(this, true)">Resistant to all pesticides</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 8 -->
+<div class="question">
+    <h2>C-peptide of human insulin is:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">A part of mature insulin molecule</li>
+        <li onclick="checkAnswer(this, false)">Responsible for formation of disulphide bridges</li>
+        <li onclick="checkAnswer(this, true)">Removed during maturation of proinsulin to insulin</li>
+        <li onclick="checkAnswer(this, false)">Responsible for its biological activity</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 9 -->
+<div class="question">
+    <h2>GEAC stands for:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Genome Engineering Action Committee</li>
+        <li onclick="checkAnswer(this, false)">Ground Environment Action Committee</li>
+        <li onclick="checkAnswer(this, true)">Genetic Engineering Approval Committee</li>
+        <li onclick="checkAnswer(this, false)">Genetic and Environment Approval Committee</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 10 -->
+<div class="question">
+    <h2>α-1-antitrypsin is:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">An antacid</li>
+        <li onclick="checkAnswer(this, false)">An enzyme</li>
+        <li onclick="checkAnswer(this, false)">Used to treat arthritis</li>
+        <li onclick="checkAnswer(this, true)">Used to treat emphysema</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+<!-- Question 1 -->
+<div class="question">
+    <h2>The first clinical gene therapy was done for the treatment of:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">SCID (Severe Combined Immuno Deficiency)</li>
+        <li onclick="checkAnswer(this, false)">AIDS</li>
+        <li onclick="checkAnswer(this, false)">Cystic fibrosis</li>
+        <li onclick="checkAnswer(this, false)">Cancer</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 2 -->
+<div class="question">
+    <h2>What is the full form of ADA in the context of genetic disorders?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Aspartate deaminase</li>
+        <li onclick="checkAnswer(this, false)">Adenosine deoxyaminase</li>
+        <li onclick="checkAnswer(this, true)">Adenosine deaminase</li>
+        <li onclick="checkAnswer(this, false)">Arginine deaminase</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 3 -->
+<div class="question">
+    <h2>The process of silencing a gene is achieved through the use of:</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">RNAi only</li>
+        <li onclick="checkAnswer(this, true)">Both RNAi and antisense RNA</li>
+        <li onclick="checkAnswer(this, false)">None of the above</li>
+        <li onclick="checkAnswer(this, false)">Antisense RNA only</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 4 -->
+<div class="question">
+    <h2>Biopiracy refers to:</h2>
+    <ul class="options">
+       
+        <li onclick="checkAnswer(this, false)">Use of biopatents</li>
+        <li onclick="checkAnswer(this, false)">Stealing of plants and animals</li>
+        <li onclick="checkAnswer(this, false)">Unauthorized exploitation of transgenic crops</li>
+        <li onclick="checkAnswer(this, true)">Exploitation of bioresources without authentic permission</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 5 -->
+<div class="question">
+    <h2>The trigger for activation of Bacillus thuringiensis toxin is:</h2>
+    <ul class="options">
+       
+        <li onclick="checkAnswer(this, false)">Acidic pH of stomach</li>
+        <li onclick="checkAnswer(this, false)">High temperature</li>
+        <li onclick="checkAnswer(this, false)">Mechanical action in the insect gut</li>
+        <li onclick="checkAnswer(this, true)">Alkaline pH of gut</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 6 -->
+<div class="question">
+    <h2>The Cry IAb gene controls which of the following pests?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Mosquito</li>
+        <li onclick="checkAnswer(this, true)">Corn borer</li>
+        <li onclick="checkAnswer(this, false)">Cotton bollworm</li>
+        <li onclick="checkAnswer(this, false)">Tobacco budworm</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 7 -->
+<div class="question">
+    <h2>Which vector was used to introduce nematode-specific genes into the tobacco host plant?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Agrobacterium</li>
+        <li onclick="checkAnswer(this, false)">Bacteriophage</li>
+        <li onclick="checkAnswer(this, false)">pBR322</li>
+        <li onclick="checkAnswer(this, false)">Plasmid</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 8 -->
+<div class="question">
+    <h2>In RNA interference (RNAi), genes are silenced using:</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">ssRNA</li>
+        <li onclick="checkAnswer(this, true)">dsRNA</li>
+        <li onclick="checkAnswer(this, false)">ssDNA</li>
+        <li onclick="checkAnswer(this, false)">dsDNA</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 9 -->
+<div class="question">
+    <h2>Which of the following is not a product of transgenic experiments?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Drought-resistant crops</li>
+        <li onclick="checkAnswer(this, false)">Pest-resistant crop variety</li>
+        <li onclick="checkAnswer(this, false)">High nutritional value in grains</li>
+        <li onclick="checkAnswer(this, false)">Production of insulin by rDNA technique</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 10 -->
+<div class="question">
+    <h2>Which of the following correctly defines a probe?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">A dsRNA molecule used for replication</li>
+        <li onclick="checkAnswer(this, false)">A plasmid DNA used for gene expression</li>
+        <li onclick="checkAnswer(this, true)">A ssDNA or ssRNA molecule used to locate homologous sequences</li>
+        <li onclick="checkAnswer(this, false)">A protein used to bind to a specific DNA sequence</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+
+    </div>
+    <div>
+        <button class="back-btn" onclick="goBack()">Back</button>
+    </div>
+    
+    <script>
+        function checkAnswer(option, isCorrect) {
+    // Disable all options after a selection
+    const allOptions = option.parentElement.querySelectorAll('li');
+    allOptions.forEach(opt => {
+        opt.style.pointerEvents = 'none'; // Disable further clicking
+    });
+
+    // Check if the answer is correct or incorrect
+    if (isCorrect) {
+        option.classList.add('correct');  // Add correct class
+    } else {
+        option.classList.add('incorrect'); // Add incorrect class
+    }
+    }
+    function refreshQuestion(button) {
+            // Get all list items within the same question
+            const options = button.previousElementSibling.querySelectorAll('li');
+            options.forEach(option => {
+                option.classList.remove('correct', 'incorrect');
+                option.style.pointerEvents = 'auto';  // Re-enable clicking
+            });
+    }
+    function goBack() {
+        window.history.back();
+    }
+
+    </script>
+</body>
+
+</html>

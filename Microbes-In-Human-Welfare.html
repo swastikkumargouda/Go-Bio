@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genetics Quiz</title>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Question title styling */
+        .question h2 {
+            font-size: 1.8em;
+            color: #2e8b57;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for the options list */
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .options li {
+            background-color: #f0f8ff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.2em;
+            border: 2px solid transparent;
+        }
+
+        /* Hover effect for options */
+        .options li:hover {
+            background-color: #e6f7ff;
+            transform: scale(1.02);
+            border: 2px solid #2e8b57;
+        }
+
+        /* Correct and incorrect answer styles */
+        .correct {
+            background-color: #4caf50 !important;
+            color: white;
+        }
+
+        .incorrect {
+            background-color: #f44336 !important;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Microbes In Human Welfare Q&A</h1>
+    <div class="quiz-container">
+       <!-- Question 1 -->
+<div class="question">
+    <h2>Removal of large pieces of floating debris, oily substances, etc, during sewage treatment is called:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Primary treatment</li>
+        <li onclick="checkAnswer(this, false)">Secondary treatment</li>
+        <li onclick="checkAnswer(this, false)">Final treatment</li>
+        <li onclick="checkAnswer(this, false)">Amplification</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 2 -->
+<div class="question">
+    <h2>During Biogas production, species used to bring about anaerobic digestion are of:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Sacchharomyces</li>
+        <li onclick="checkAnswer(this, false)">Pseudomonas</li>
+        <li onclick="checkAnswer(this, false)">Rhizopus</li>
+        <li onclick="checkAnswer(this, true)">Methanococcus</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 3 -->
+<div class="question">
+    <h2>The microorganism used to produce enzyme pectinase is:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Saccharomyces</li>
+        <li onclick="checkAnswer(this, false)">Scrertiana</li>
+        <li onclick="checkAnswer(this, false)">Rhizopus</li>
+        <li onclick="checkAnswer(this, true)">Trichoderma</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 4 -->
+<div class="question">
+    <h2>Which one of the following is a free-living bacterial biofertilizer?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Azotobacter</li>
+        <li onclick="checkAnswer(this, false)">Scirotiana</li>
+        <li onclick="checkAnswer(this, false)">Rhizopus</li>
+        <li onclick="checkAnswer(this, false)">Bacillus thuringiensis</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 5 -->
+<div class="question">
+    <h2>Which of the following is not an advantage of biogas?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">It burns with a blue flame without smoke</li>
+        <li onclick="checkAnswer(this, false)">It helps to improve sanitation of the surroundings</li>
+        <li onclick="checkAnswer(this, true)">It is highly expensive</li>
+        <li onclick="checkAnswer(this, false)">It can be used for domestic lighting</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 6 -->
+<div class="question">
+    <h2>The most commonly used substance for industrial production of beer is:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Barley</li>
+        <li onclick="checkAnswer(this, false)">Wheat</li>
+        <li onclick="checkAnswer(this, false)">Corn</li>
+        <li onclick="checkAnswer(this, false)">Sugarcane molasses</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 7 -->
+<div class="question">
+    <h2>In olden days, cheese was prepared by:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Aspergillus</li>
+        <li onclick="checkAnswer(this, true)">Rennet enzyme</li>
+        <li onclick="checkAnswer(this, false)">Clostridium bacteria</li>
+        <li onclick="checkAnswer(this, false)">None of the above</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 8 -->
+<div class="question">
+    <h2>Which microorganism is used in the formation of cheese?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Streptococcus</li>
+        <li onclick="checkAnswer(this, false)">Aspergillus</li>
+        <li onclick="checkAnswer(this, false)">Acetic acid bacteria</li>
+        <li onclick="checkAnswer(this, false)">Lactic acid bacteria</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 9 -->
+<div class="question">
+    <h2>Big holes in Swiss cheese are made by:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">A machine</li>
+        <li onclick="checkAnswer(this, false)">A bacterium that produces methane gas</li>
+        <li onclick="checkAnswer(this, true)">A bacterium producing a large amount of carbon dioxide</li>
+        <li onclick="checkAnswer(this, false)">A fungus that releases a lot of gases during its metabolic activities</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 10 -->
+<div class="question">
+    <h2>The residue left after methane production from cattle dung is:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Burnt</li>
+        <li onclick="checkAnswer(this, false)">Burned in landfills</li>
+        <li onclick="checkAnswer(this, true)">Used as manure</li>
+        <li onclick="checkAnswer(this, false)">Used in civil construction</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 11 -->
+<div class="question">
+    <h2>Methanogens do not produce:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Oxygen</li>
+        <li onclick="checkAnswer(this, false)">Methane</li>
+        <li onclick="checkAnswer(this, false)">Hydrogen sulfide</li>
+        <li onclick="checkAnswer(this, false)">Carbon dioxide</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 12 -->
+<div class="question">
+    <h2>Activated sludge should have the ability to settle quickly so that it can:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Be rapidly pumped back from sedimentation tank to aeration tank</li>
+        <li onclick="checkAnswer(this, false)">Absorb pathogenic bacteria present in wastewater while sinking to the bottom of the settling tank</li>
+        <li onclick="checkAnswer(this, false)">Be discarded and anaerobically digested</li>
+        <li onclick="checkAnswer(this, false)">Absorb colloidal organic matter</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 13 -->
+<div class="question">
+    <h2>Match the items in Column ‘A’ and Column ‘B’ and choose the correct answer.</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Ladybird - Methano bacterium</li>
+        <li onclick="checkAnswer(this, false)">Mycorrhiza - Trichoderma</li>
+        <li onclick="checkAnswer(this, true)">Ladybird - Aphids</li>
+        <li onclick="checkAnswer(this, false)">Biogas - Glomus</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 14 -->
+<div class="question">
+    <h2>Conversion of milk to curd improves its nutritional value by increasing the amount of:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Vitamin B12</li>
+        <li onclick="checkAnswer(this, false)">Vitamin A</li>
+        <li onclick="checkAnswer(this, false)">Vitamin D</li>
+        <li onclick="checkAnswer(this, false)">Vitamin E</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 15 -->
+<div class="question">
+    <h2>Azolla is used as a biofertilizer because it:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Has association of mycorrhiza</li>
+        <li onclick="checkAnswer(this, false)">Multiplies at faster rate to produce massive biomass</li>
+        <li onclick="checkAnswer(this, false)">Has association of nitrogen-fixing Rhizobium</li>
+        <li onclick="checkAnswer(this, true)">Has association of nitrogen-fixing cyanobacteria</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 16 -->
+<div class="question">
+    <h2>Roquefort cheese is ripened by using a:</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Type of yeast</li>
+        <li onclick="checkAnswer(this, true)">Fungus</li>
+        <li onclick="checkAnswer(this, false)">Bacterium</li>
+        <li onclick="checkAnswer(this, false)">Cyanobacteria</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 17 -->
+<div class="question">
+    <h2>Which of the following is incorrectly matched?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Monascus - Statins - Lowering of blood cholesterol</li>
+        <li onclick="checkAnswer(this, false)">Streptococcus - Streptokinase - Removal of clot from blood vessel</li>
+        <li onclick="checkAnswer(this, true)">Clostridium - Lipase - Removal of oil stains</li>
+        <li onclick="checkAnswer(this, false)">Trichoderma - Cyclosporin-A - Immunosuppressive drug</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 18 -->
+<div class="question">
+    <h2>Which of the following is not used as a biopesticide?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, false)">Bacillus thuringiensis</li>
+        <li onclick="checkAnswer(this, true)">Xanthomonas campestris</li>
+        <li onclick="checkAnswer(this, false)">Nuclear Polyhedrosis Virus (NPV)</li>
+        <li onclick="checkAnswer(this, false)">Trichoderma harzianum</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 19 -->
+<div class="question">
+    <h2>Which of the following in sewage treatment removes suspended solids?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Primary treatment</li>
+        <li onclick="checkAnswer(this, false)">Secondary treatment</li>
+        <li onclick="checkAnswer(this, false)">Tertiary treatment</li>
+        <li onclick="checkAnswer(this, false)">Sludge treatment</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 20 -->
+<div class="question">
+    <h2>Which of the following diseases is caused by a deficiency of Vitamin C?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Scurvy</li>
+        <li onclick="checkAnswer(this, false)">Rickets</li>
+        <li onclick="checkAnswer(this, false)">Beriberi</li>
+        <li onclick="checkAnswer(this, false)">Pellagra</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 21 -->
+<div class="question">
+    <h2>Which part of the plant conducts photosynthesis?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Roots</li>
+        <li onclick="checkAnswer(this, false)">Stem</li>
+        <li onclick="checkAnswer(this, false)">Flower</li>
+        <li onclick="checkAnswer(this, true)">Leaves</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 22 -->
+<div class="question">
+    <h2>Which enzyme is responsible for the breakdown of starch into sugars?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Pepsin</li>
+        <li onclick="checkAnswer(this, true)">Amylase</li>
+        <li onclick="checkAnswer(this, false)">Trypsin</li>
+        <li onclick="checkAnswer(this, false)">Lipase</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 23 -->
+<div class="question">
+    <h2>Which process is used by plants to convert sunlight into energy?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Photosynthesis</li>
+        <li onclick="checkAnswer(this, false)">Respiration</li>
+        <li onclick="checkAnswer(this, false)">Transpiration</li>
+        <li onclick="checkAnswer(this, false)">Fermentation</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 24 -->
+<div class="question">
+    <h2>Which organ in the human body is responsible for filtering blood?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Kidney</li>
+        <li onclick="checkAnswer(this, false)">Liver</li>
+        <li onclick="checkAnswer(this, false)">Lungs</li>
+        <li onclick="checkAnswer(this, false)">Heart</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 25 -->
+<div class="question">
+    <h2>Which gas is primarily responsible for the greenhouse effect?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Nitrogen</li>
+        <li onclick="checkAnswer(this, false)">Oxygen</li>
+        <li onclick="checkAnswer(this, false)">Hydrogen</li>
+        <li onclick="checkAnswer(this, true)">Carbon dioxide</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 26 -->
+<div class="question">
+    <h2>What is the main constituent of natural gas?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Ethane</li>
+        <li onclick="checkAnswer(this, false)">Propane</li>
+        <li onclick="checkAnswer(this, true)">Methane</li>
+        <li onclick="checkAnswer(this, false)">Butane</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 27 -->
+<div class="question">
+    <h2>Which is the smallest bone in the human body?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Femur</li>
+        <li onclick="checkAnswer(this, false)">Humerus</li>
+        <li onclick="checkAnswer(this, true)">Stapes</li>
+        <li onclick="checkAnswer(this, false)">Tibia</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 28 -->
+<div class="question">
+    <h2>What is the primary function of white blood cells?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Transport oxygen</li>
+        <li onclick="checkAnswer(this, false)">Clot blood</li>
+        <li onclick="checkAnswer(this, false)">Carry nutrients</li>
+        <li onclick="checkAnswer(this, true)">Fight infections</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 29 -->
+<div class="question">
+    <h2>Which macronutrient is essential for the growth and repair of body tissues?</h2>
+    <ul class="options">
+        
+        <li onclick="checkAnswer(this, false)">Carbohydrates</li>
+        <li onclick="checkAnswer(this, false)">Fats</li>
+        <li onclick="checkAnswer(this, true)">Proteins</li>
+        <li onclick="checkAnswer(this, false)">Vitamins</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+<!-- Question 30 -->
+<div class="question">
+    <h2>Which of the following organisms can perform nitrogen fixation?</h2>
+    <ul class="options">
+        <li onclick="checkAnswer(this, true)">Rhizobium</li>
+        <li onclick="checkAnswer(this, false)">E. coli</li>
+        <li onclick="checkAnswer(this, false)">Saccharomyces</li>
+        <li onclick="checkAnswer(this, false)">Plasmodium</li>
+    </ul>
+    <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+</div>
+
+
+
+
+    </div>
+
+    <div>
+        <button class="back-btn" onclick="goBack()">Back</button>
+    </div>
+
+    <script>
+        function checkAnswer(option, isCorrect) {
+            const allOptions = option.parentElement.querySelectorAll('li');
+            allOptions.forEach(opt => {
+                opt.style.pointerEvents = 'none'; 
+            });
+
+            if (isCorrect) {
+                option.classList.add('correct');
+            } else {
+                option.classList.add('incorrect');
+            }
+        }
+
+        function refreshQuestion(button) {
+            const options = button.previousElementSibling.querySelectorAll('li');
+            options.forEach(option => {
+                option.classList.remove('correct', 'incorrect');
+                option.style.pointerEvents = 'auto';
+            });
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+    </script>
+</body>
+</html>

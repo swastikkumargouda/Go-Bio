@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodiversity Conservation Quiz</title>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .question h2 {
+            font-size: 1.8em;
+            color: #2e8b57;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .options li {
+            background-color: #f0f8ff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.2em;
+            border: 2px solid transparent;
+        }
+
+        .options li:hover {
+            background-color: #e6f7ff;
+            transform: scale(1.02);
+            border: 2px solid #2e8b57;
+        }
+
+        .correct {
+            background-color: #4caf50 !important;
+            color: white;
+        }
+
+        .incorrect {
+            background-color: #f44336 !important;
+            color: white;
+        }
+
+        .refresh-btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .refresh-btn:hover {
+            background-color: #3da36e;
+        }
+
+        .back-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #5c6bc0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Biodiversity Conservation Q&A</h1>
+    <div class="quiz-container">
+
+        <!-- Question 1 -->
+        <div class="question">
+            <h2>Which of the following is a biodiversity hotspot in India?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">Western Ghats</li>
+                <li onclick="checkAnswer(this, false)">Deccan Plateau</li>
+                <li onclick="checkAnswer(this, false)">Chota Nagpur Plateau</li>
+                <li onclick="checkAnswer(this, false)">Indo-Gangetic Plains</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <h2>The Convention on Biological Diversity was signed at</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Paris</li>
+                <li onclick="checkAnswer(this, false)">New York</li>
+                <li onclick="checkAnswer(this, true)">Rio de Janeiro</li>
+                <li onclick="checkAnswer(this, false)">London</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <h2>What is the most significant cause of biodiversity loss?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Overpopulation</li>
+                <li onclick="checkAnswer(this, true)">Habitat destruction</li>
+                <li onclick="checkAnswer(this, false)">Pollution</li>
+                <li onclick="checkAnswer(this, false)">Global warming</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <h2>The Red Data Book contains data on</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Water resources</li>
+                <li onclick="checkAnswer(this, false)">Soil profiles</li>
+                <li onclick="checkAnswer(this, true)">Endangered species</li>
+                <li onclick="checkAnswer(this, false)">Forest cover</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <h2>What does the term "endemic species" refer to?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Species found worldwide</li>
+                <li onclick="checkAnswer(this, true)">Species found only in a specific region</li>
+                <li onclick="checkAnswer(this, false)">Migratory species</li>
+                <li onclick="checkAnswer(this, false)">Introduced species</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <h2>Which type of conservation focuses on protecting species in their natural habitats?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">In situ conservation</li>
+                <li onclick="checkAnswer(this, false)">Ex situ conservation</li>
+                <li onclick="checkAnswer(this, false)">Cloning</li>
+                <li onclick="checkAnswer(this, false)">Captive breeding</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <h2>Which of the following is an example of ex situ conservation?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Biosphere reserves</li>
+                <li onclick="checkAnswer(this, true)">Seed banks</li>
+                <li onclick="checkAnswer(this, false)">National parks</li>
+                <li onclick="checkAnswer(this, false)">Sanctuaries</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <h2>Which of the following practices is most harmful to biodiversity?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Organic farming</li>
+                <li onclick="checkAnswer(this, true)">Deforestation</li>
+                <li onclick="checkAnswer(this, false)">Reforestation</li>
+                <li onclick="checkAnswer(this, false)">Wildlife sanctuaries</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <h2>Which of the following areas is a protected biodiversity region?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, true)">National Parks</li>
+                <li onclick="checkAnswer(this, false)">Mining regions</li>
+                <li onclick="checkAnswer(this, false)">Urban areas</li>
+                <li onclick="checkAnswer(this, false)">Agricultural fields</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <h2>What is the main objective of the Ramsar Convention?</h2>
+            <ul class="options">
+                <li onclick="checkAnswer(this, false)">Forest conservation</li>
+                <li onclick="checkAnswer(this, true)">Wetland conservation</li>
+                <li onclick="checkAnswer(this, false)">Desert conservation</li>
+                <li onclick="checkAnswer(this, false)">Ocean conservation</li>
+            </ul>
+            <button class="refresh-btn" onclick="refreshQuestion(this)">Refresh Question</button>
+        </div>
+
+        <!-- Add more questions in the same format -->
+
+    </div>
+    <div>
+        <button class="back-btn" onclick="goBack()">Back</button>
+    </div>
+
+    <script>
+        function checkAnswer(option, isCorrect) {
+            const allOptions = option.parentElement.querySelectorAll('li');
+            allOptions.forEach(opt => {
+                opt.style.pointerEvents = 'none';
+            });
+
+            if (isCorrect) {
+                option.classList.add('correct');
+            } else {
+                option.classList.add('incorrect');
+            }
+        }
+
+        function refreshQuestion(button) {
+            const options = button.previousElementSibling.querySelectorAll('li');
+            options.forEach(option => {
+                option.classList.remove('correct', 'incorrect');
+                option.style.pointerEvents = 'auto';
+            });
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
